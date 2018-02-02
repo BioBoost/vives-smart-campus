@@ -5,6 +5,7 @@
 * [The Web Portal](the-web-portal.md)
 * [LoRaWAN](lorawan.md)
 * The Things Network
-* Redmine
+* [Redmine](redmine.md)
 * [Goals](goals.md)
+* [Iterations](iterations.md)
 

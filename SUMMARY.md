@@ -6,4 +6,5 @@
 * [LoRaWAN](lorawan.md)
 * The Things Network
 * Redmine
+* [Goals](goals.md)
 

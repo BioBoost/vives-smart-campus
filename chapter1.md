@@ -8,15 +8,21 @@ For this project each group needs to build three sensors. The first two are pre-
 
 \[todo\] description
 
-## Sensor 2 - E Ink Display
+## Sensor 2 - Room Quality Sensor
 
 \[todo\] description
 
-## Option for Sensor 3 - Parking Sensor
+New PCB - Extension of PIR detector
+
+## Sensor 3 - E Ink Display
 
 \[todo\] description
 
-## Option for Sensor 3 - Room Quality Sensor
+Will need a Real-Time Clock 
 
-\[todo\] description
+## 
+
+## 
+
+
 

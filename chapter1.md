@@ -12,13 +12,13 @@ For this project each group needs to build three sensors. The first two are pre-
 
 \[todo\] description
 
-New PCB - Extension of PIR detector
+Iteration - New PCB - Extension of PIR detector
 
 ## Sensor 3 - E Ink Display
 
 \[todo\] description
 
-Will need a Real-Time Clock 
+Will need a Real-Time Clock
 
 ## 
 

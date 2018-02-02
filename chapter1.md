@@ -2,7 +2,7 @@
 
 \[TODO\] Introduction
 
-For this project each group needs to build three sensors. The first two are pre-determined and the last sensor can be choosen from the available options
+For this project each group needs to build three sensors. The first two are pre-determined and the last sensor can be choosen from the available options.
 
 ## Sensor 1 - People Detector
 
@@ -19,6 +19,4 @@ For this project each group needs to build three sensors. The first two are pre-
 ## Option for Sensor 3 - Room Quality Sensor
 
 \[todo\] description
-
-
 

@@ -1,3 +1,4 @@
-# My Awesome Book
+# VIVES Smart Building
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+Imagine our VIVES campus at the Spoorwegstraat turning into a smart building with the ability to detect crowded rooms, air quality, telling people where to park, giving visitors direction and so on. A smart building could better our working and study lives at the campus.
+

@@ -19,7 +19,7 @@
 * [Smart Campus with LoRaWAN](README.md)
 * [Project Description](project/hardware-description.md)
 * [Hardware Designers](project/hardware-designers.md)
-* [Software Designers](project/task-description-of-the-software-designers.md)
+* [Software Designers](project/software-requirements.md)
 * [Project requirements](project/project-requirements.md)
 
 ## Introduction \(CHANGE THIS CHAPTER\)

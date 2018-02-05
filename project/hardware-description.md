@@ -1,36 +1,75 @@
 # Hardware requirements
 
-## Game Box
+Multiple hardware systems must be build. 
+1. Occupation detector
+2. Temperature and humidity monitoring
+3. Smart signs
 
-The "game box" \(one per team\) is a plastic box and will be provided \(see the image below \). The game box will contain the battery, the battery management system, an LCD display, the embedded system, ..., so that the competing teams should have an autonomy of several hours.
+Designing and developing these systems must be done in an incremental process. Start by using development boards, breadboards and sensors. This enables to do small experiments and start writing the firmware. Parallel a custom board can be developed. This process makes sure that hardware and firmware can be developed without depending on each other.
 
-<!-- ![Example of the game box](/assets/SVL_003_2021.jpg) -->
+Any hardware can be used. The only requirement is that it is mbed compatible: [developer.mbed.org/platforms/](https://developer.mbed.org/platforms/).
 
-Consider the following overview of the hardware components:
+## LoRaWAN Transceiver
 
-* a battery \(Lithium Ion Polymer - LIPO\);
-* a battery management system to charge the battery and keep track if its minimal voltage level;
-* an FRDM-K64F **mbed **based embedded system \(URL: [https://developer.mbed.org/platforms/FRDM-K64F/](https://developer.mbed.org/platforms/FRDM-K64F/ "FRDM-K64F mbed") - see **Figure 3/4**\) to host the firmware;
-* a Real Time Clock \(RTC\) to provide day/time timestamps;
-* an LCD display \(4 x 20 characters\) to visualize messages, tasks, challenges, the user interface, ...;
-* a keyboard for user input;
-* a key lock for challenges;
-* five LED's for status indications;
-* and two pushbuttons
+All designs must make use of LoRaWAN. Multiple transceivers are available on the market. You can choose any of these radio's:
+* HopeRF RFM-95
+* Microchip RN2483
+* Murata CMWX1ZZABZ
+* ...
 
-![FRDM-K64F mbed](img/FRDM_K64F_large.png)
+## Battery Powered
 
-![FRDM-K64F mbed Block Diagram](img/xfrdm-k64f_block-diagram_jpg_pagespeed_ic_n9RhjOFW_9.jpg)
+All designs must be battery powered. Special attention is needed to make sure the hardware consumes the least possible amount of power. The hardware must be able to run on 3 AAA batteries for at least 1 year. 
 
-## Game Box hardware extensions
+An AAA battery has a typical capacity of around 1000mAh. 1 year consists out of 8760 hours. This means that the hardware must consume less then 1000mAh / 8760h = 0.114mA. Keeping in mind the self discharge of a battery, lets set the limit of average power consumption at 0.100mA or 100µA. Thus building an Ultra Low Power circuit.
 
-The basic hardware of the game box must be extended with the following hardware components:
+The design must result in a circuit that consumes as less as possible. If an lifetime of more than 1 year can be achieved, than this will be rewarded.
 
-* a **GPS** module
-* a **LoRaWAN** transceiver \(URL: [https://www.lora-alliance.org/For-Developers/LoRaWANDevelopers](https://www.lora-alliance.org/For-Developers/LoRaWANDevelopers "LoRaWAN") - see **see image below**\)
+## Occupation Detector
 
-**LoRaWAN** is a Low Power Wide Area Network with features that support low-cost, mobile, and secure bi-directional communication for Internet of Things \(IoT\), machine-to-machine \(M2M\), smart cities, and industrial applications. LoRaWAN is optimized for low power consumption and is designed to support large networks with millions of devices. Innovative features of LoRaWAN include support for redundant operations, geolocation, low-cost, and low-power devices can even run on energy harvesting technologies enabling the mobility and ease of use of Internet of Things.
+The heart of the occupation detector is a digital PIR sensor: Panasonic AMN31111j. This PIR sensor is really easy to use. The output pin will toggle whenever the sensor detects movement.
 
-![LoRaWAN Network Architecture](img/LoRaWAN_network_architecture.jpg)
+The detector should be enclosed in a plastic case. At the bottom an magnet should be placed so that the sensor can stick to any iron surface (casings, cabinets, ceiling,...). These enclosures can be found at [be.farnell.com](http://be.farnell.com). Magnets can be selected at [www.supermagnete.be](http://www.supermagnete.be).
 
-The LoRaWAN communication channel can be used to implement the real-time monitoring of the game state by the game master. Since it is a bi-directional channel, it can also be used by the game master to change settings or inject challenges in the team's game-boxes.
+The detector should accumulate the movement detections over a fixed or variable amount of time and send a summary to the server. For example detected 12 movements in the last minute, or detected only 1 movement in the last 3 hours.
+
+The detector should also be able to send a periodic heartbeat to the server, letting it know that it is still functioning. 
+
+The detector must also let the server know what the state of the battery is. This could be on a daily basis or an other interval.
+
+## Temperature and Humidity Monitor
+
+The temperature and humidity monitor should build further on the existing occupation detector. Expand the existing design to add the new functionality. Keep in mind that the power consumption may not exceed the existing limit of 100µA average. The same enclosure must be compatible with these new features.
+
+## Smart Signs
+
+To build the smart signs, an power efficient technology must be used. Epaper is an excellent option for this kind of cases. The same power restrictions apply for the smart signs. The battery must last at least for 1 year without replacing them. 
+
+The smart signs must have a notion of the current time. Therefore an Real Time Clock or RTC must be available to the system.
+
+The smart signs must support at least two use cases.
+* Classroom labels
+* Signposts
+
+### Classroom labels
+
+A summary of the schedule of the current day must be visible on the display. The current occupation of the room must be highlighted. The schedule consists out of the following properties:
+
+* Room number
+* Current date
+* Course name
+* Teachers involved to the course (could be multiple)
+* Start hour
+* End hour
+
+### Signposts
+
+Signposts will be placed in the hallway or building entrance. They will inform visitors and students of special events. For example if an event or workshop is held on a particular day, it must show the following information:
+
+* Name of the event
+* Start hour
+* End hour
+* Room number
+* Arrow pointing to the room
+
+When no events are planned for that day, information about upcoming events can be displayed, or a simple welcome message.

@@ -67,6 +67,8 @@ At the end of each project day an evaluation will be made for each group based o
 
 > If it's not in the logs, it never happened !
 
+![IT project estimates](img/it-project-estimates.jpg)
+
 ## Slack
 
 A slack channel is created for this project. Preferable all communication and discussion should be done here if it does not concern to Redmine.

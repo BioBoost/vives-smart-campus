@@ -17,10 +17,11 @@
 ## Assignment
 
 * [Smart Campus with LoRaWAN](README.md)
-* [Project Description](project/hardware-description.md)
-* [Hardware Designers](project/hardware-designers.md)
-* [Software Designers](project/software-requirements.md)
-* [Project requirements](project/project-requirements.md)
+* [Project Requirements](project/hardware-requirements.md)
+* [Hardware Design](project/hardware-design.md)
+* [Software Requirements](project/software-requirements.md)
+* [Software Design](project/software-design.md)
+* [Project Requirements](project/project-requirements.md)
 
 ## Introduction \(CHANGE THIS CHAPTER\)
 

@@ -1,4 +1,4 @@
-# Hardware requirements
+# Hardware Requirements
 
 Multiple hardware systems must be build. 
 1. Occupation detector

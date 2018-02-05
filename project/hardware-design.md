@@ -2,10 +2,21 @@
 
 The non-limited list of tasks of the hardware designers consists of the:
 
+* development of prototype using processor or sensor boards
+* development of a custom battery powered pcb
 * development of the **mbed device drivers**;
 * integration of the mbed firmware in **mbed OS **;
-* development of the **Battery Management System** \(BMS\);
 * communication with the software development team using the Agile **SCRUM** Software Development Methodology.
+
+## Prototype
+
+In an early stage, a fast proof-of-concept must be build using a prototype design. This design can be build using existing processor boards, breakout sensor boards and other pre-made hardware. This design will serve as a platform to test and develop firmware. In the next stage, a custom pcb with all the components must be build.
+
+## Custom PCB
+
+In the next stage, a custom PCB must be build using only the essential components. The PCB must also make use of battery power to run, and must be optimized to run as long as possible. PCB's can be ordered online using a service like http://www.allpcb.com/ or an alternative service.
+
+The PCB can be designed using the design software of your preference. We recommend [circuitmaker](https://circuitmaker.com/), but [eagle](https://www.autodesk.com/products/eagle/overview) is also a good option.
 
 ## mbed device drivers
 
@@ -20,13 +31,6 @@ ARM mbed OS is an open source embedded operating system designed specifically fo
 URL: [https://www.mbed.com/en/development/mbed-os/](https://www.mbed.com/en/development/mbed-os/ "mbed OS")
 
 ![mbed OS](img/mbed_os_server.png)
-
-## Battery Management System \(BMS\)
-
-<!-- The battery can for example be a LiPo \(Lithium Polymer\) or a Lithium-Ion battery. The choice is up to you.  
-The output voltage of a single cell LiPo battery is +3,7 V DC. This voltage should be transformed to +5 V DC. A DC/DC convertor could be a valuable suggestion. The game box should have to ability to charge the battery. The external connector for charging the battery must be a USB connector. A **Battery Management System** \(see **image below**\) is mandatory to prevent excessive discharge of the battery. Deep discharge of these kind of batteries would cause irreversible damage to the battery.
-
-![Lithium-Ion Battery Management System](/assets/BMS2.jpg) -->
 
 ## Communication with the software development team
 

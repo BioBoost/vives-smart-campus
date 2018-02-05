@@ -17,7 +17,7 @@
 ## Assignment
 
 * [Smart Campus with LoRaWAN](README.md)
-* [Project Requirements](project/hardware-requirements.md)
+* [Hardware Requirements](project/hardware-requirements.md)
 * [Hardware Design](project/hardware-design.md)
 * [Software Requirements](project/software-requirements.md)
 * [Software Design](project/software-design.md)

@@ -80,6 +80,10 @@ Cron jobs can be used to update the remote EInk displays with the necessary mess
 
 ## Database
 
+To store all the historical data of the application, an database will be needed. Any kind of database could be up for this task. I may be usefull to check out some NoSQL databases as well. For example [InfluxDB](https://www.influxdata.com/products/) is an ideal database to store sensor data in a timeseries.
+
+A mix of two types databases could be used as well. Choose a database that is fit for the task.
+
 ## Docker
 
 Docker is a service that allows the creation and running of containers based on images defined by developers. Containers package software into standardized units for development, shipment and deployment. A container image is a lightweight, stand-alone, executable package of a piece of software that includes everything needed to run it: code, runtime, system tools, system libraries, settings. Available for both Linux and Windows based apps, containerized software will always run the same, regardless of the environment. Containers isolate software from its surroundings, for example differences between development and staging environments and help reduce conflicts between teams running different software on the same infrastructure.

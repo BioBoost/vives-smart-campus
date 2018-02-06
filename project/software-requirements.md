@@ -6,17 +6,17 @@ Administrators should be able to schedule events to announce on the displays
 
 ## User interface
 
-A user interface will need to be build in order to do something usefull with the captured sensor data. This dashboard will inform any visitors and students with the various parameters that are measured.
+A user interface will need to be build in order to do something useful with the captured sensor data. This dashboard will inform any visitors and students with the various parameters that are measured.
 
-At the other hand a managment the smart signs must be at hand. It must be possible to manage schedules for the different rooms, and update information about new workshops or give default information like the weather. An administrator must be able to mangage all these functions using a web interface.
+At the other hand a management the smart signs must be at hand. It must be possible to manage schedules for the different rooms, and update information about new workshops or give default information like the weather. An administrator must be able to manage all these functions using a web interface.
 
 ### Management
 
-The smart signs must al have a custom schedule that can be programmed by an administrator. He must be able to make changes to existing schedules. 
+The smart signs must al have a custom schedule that can be programmed by an administrator. He must be able to make changes to existing schedules.
 
-For events, the start, and endtimes must be provided to the signs. This enables a fully automatic system that has as less as possible time to maintain.
+For events, the start and end times must be provided to the signs. This enables a fully automatic system that has as less as possible time to maintain.
 
-The managment part of the user interface will consist out of forms that enable CRUD actions. 
+The management part of the user interface will consist out of forms that enable CRUD actions.
 
 ### Dashboard
 

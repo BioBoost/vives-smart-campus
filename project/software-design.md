@@ -14,19 +14,19 @@ Next to that the system should also allow the displays to be updated.
 
 ## Backend
 
-The backend is the software that runs on the server. It will provide an interface REST API for the frontend to be able to manage all parameters and values of the application. 
+The backend is the software that runs on the server. It will provide an interface REST API for the frontend to be able to manage all parameters and values of the application.
 
 ### NodeExpress / MVC framework
 
-Any MVC framework could be used for this task. [Node Express](https://expressjs.com/) would be a nice candidate to forfill this task.  The JavaScript language is perfect for these kinds of applications
+Any MVC framework could be used for this task. [Node Express](https://expressjs.com/) would be a nice candidate to fulfill this task.  The JavaScript language is perfect for these kinds of applications
 
 ## Frontend framework / View
 
 The frontend framework is responsible for providing interactivity to the user in the browser. It will consist out of JavaScript framework that will manage all communication to the backend using the REST API. It will also make the application more dynamic and create the look and feel of an real application.
 
-[Vue.js](https://vuejs.org/) is perfect candidate for this task. It is a modern and easy to use frontend framework, enabling the latest en best features for a rich application.
+[Vue.js](https://vuejs.org/) is perfect candidate for this task. It is a modern and easy to use frontend framework, enabling the latest and best features for a rich application.
 
-A CSS framework will be needed as well. [Materialize](http://materializecss.com/) could provide an App like experience to the enduser. Other frameworks could be used as will.
+A CSS framework will be needed as well. [Materialize](http://materializecss.com/) could provide an App like experience to the end-users. Other frameworks could be used as will.
 
 ## MQTT
 
@@ -52,7 +52,7 @@ Cron jobs can be used to update the remote EInk displays with the necessary mess
 
 ## Database
 
-To store all the historical data of the application, an database will be needed. Any kind of database could be up for this task. I may be usefull to check out some NoSQL databases as well. For example [InfluxDB](https://www.influxdata.com/products/) is an ideal database to store sensor data in a timeseries.
+To store all the historical data of the application, an database will be needed. Any kind of database could be up for this task. I may be useful to check out some NoSQL databases as well. For example [InfluxDB](https://www.influxdata.com/products/) is an ideal database to store sensor data in a time series.
 
 A mix of two types databases could be used as well. Choose a database that is fit for the task.
 

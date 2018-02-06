@@ -33,9 +33,3 @@ ARM mBed OS is an open source embedded operating system designed specifically fo
 ![mBed OS](img/mbed_internal.png)
 
 More info about mBed OS can be found at [https://os.mbed.com/](https://os.mbed.com/).
-
-## Communication with the software development team
-
-The team of hardware developers should meet/communicate on a regular basis with the software development team. The use of the iterative and incremental Agile software development methodology of **SCRUM** \(see **image below**\) is mandatory. One of the major contributors to the successful realization of a project is an intense, regular communication between the hardware and the software engineering teams. Detailed agreements on interfaces, connectors, communication protocols, pinout, ... are mandatory and fundamental to guarantee the successful realization of your project within a realistic period of time.
-
-![the Agile SCRUM Methodology of software development](img/SCRUM.jpg)

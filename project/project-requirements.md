@@ -47,6 +47,12 @@ To meet the objectives of the project, some requirements are mandatory:
 * Efficient and streamlined communication between team members, peer-to-peer, bottom-up and top-down
 * Peer assessment
 
+## Agile Development SCRUM Methodology
+
+The team of hardware developers should meet/communicate on a regular basis with the software development team. The use of the iterative and incremental Agile software development methodology of **SCRUM** \(see **image below**\) is mandatory. One of the major contributors to the successful realization of a project is an intense, regular communication between the hardware and the software engineering teams. Detailed agreements on interfaces, connectors, communication protocols, pinout, ... are mandatory and fundamental to guarantee the successful realization of your project within a realistic period of time.
+
+![Agile SCRUM Methodology of software development](img/SCRUM.jpg)
+
 ## Git
 
 All code and progress should be managed using Git. [github.com](https://github.com) can be used to create repositories and organize collaboration. Teachers should have full access to the projects, and projects should be public.

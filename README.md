@@ -61,8 +61,13 @@ The hallways can also be equipped with these kind of displays that are used as a
 
 All the hardware systems summed up above would be useless if the data they produce disappears in thin air. A monitoring system must be provided. All data and parameters should be stored in a **database**, and a graphical user interface should be able to visualize the data in different and useful ways, like **charts and graphs**.
 
+![Dashboard extra details](project/img/dashboard-02.jpg)
+
 On the other hand the smart signs should be able to be **managed** on this system. Adding, or changing schedules for classrooms could easily be done with this system. Updating the signs with new information should be done on an automatically timed process, **preventing the need of human intervention**.
 
 The application should also provide a **generic dashboard** that presents useful information to all the users of the campus.
 
-*** EXAMPLE PICTURE ***
+![Digital sign](project/img/signage.png)
+
+
+

@@ -1,16 +1,48 @@
 ## User interface
 
+A user interface will need to be build in order to do something usefull with the captured sensor data. This dashboard will inform any visitors and students with the various parameters that are measured.
+
+At the other hand a managment the smart signs must be at hand. It must be possible to manage schedules for the different rooms, and update information about new workshops or give default information like the weather. An administrator must be able to mangage all these functions using a web interface.
+
 ### Management
+
+The smart signs must al have a custom schedule that can be programmed by an administrator. He must be able to make changes to existing schedules. 
+
+For events, the start, and endtimes must be provided to the signs. This enables a fully automatic system that has as less as possible time to maintain.
+
+The managment part of the user interface will consist out of forms that enable CRUD actions. 
 
 ### Dashboard
 
+An example of a dashboard could be as shown in the next picture. The picture shows a very visual layout of a building with the current sensor values visible for the different rooms.
+
+![Dashboard building plan](img/dashboard-01.jpg)
+
+Another view could be to show the historical data in the form of graphs and charts. The values of the last week, day or month could be displayed.
+
+![Dashboard extra details](img/dashboard-02.jpg)
+
+Another view that the dashboard may provide is a more detailed view of a single room. It could provide other types of charts or tables providing other ways to interprete the measurements and data.
+
+![Dashboard history and location](img/dashboard-03.jpg)
+
 ## Backend
 
-### NodeExpress / MVC
+The backend is the software that runs on the server. It will provide an interface REST API for the frontend to be able to manage all parameters and values of the application. 
+
+### NodeExpress / MVC framework
+
+Any MVC framework could be used for this task. [Node Express](https://expressjs.com/) would be a nice candidate to forfill this task.  The JavaScript language is perfect for these kinds of applications
 
 ## Frontend framework / View
 
-## MQTT Server
+The frontend framework is responsible for providing interactivity to the user in the browser. It will consist out of JavaScript framework that will manage all communication to the backend using the REST API. It will also make the application more dynamic and create the look and feel of an real application.
+
+[Vue.js](https://vuejs.org/) is perfect candidate for this task. It is a modern and easy to use frontend framework, enabling the latest en best features for a rich application.
+
+A CSS framework will be needed as well. [Materialize](http://materializecss.com/) could provide an App like experience to the enduser. Other frameworks could be used as will.
+
+## MQTT Client
 
 ## CRON service
 

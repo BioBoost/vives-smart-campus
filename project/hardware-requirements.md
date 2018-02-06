@@ -75,3 +75,5 @@ Signposts will be placed in the hallway or building entrance. They will inform v
 * Arrow pointing to the room
 
 When no events are planned for that day, information about upcoming events can be displayed, or a simple welcome message.
+
+![Digital sign example](img/signage.png)

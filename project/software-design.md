@@ -1,5 +1,26 @@
-<!-- TODO: NEEDS UPDATE !!!!! -->
+## User interface
 
+### Management
+
+### Dashboard
+
+## Backend
+
+### NodeExpress / MVC
+
+## Frontend framework / View
+
+## MQTT Server
+
+## CRON service
+
+<!-- For updating the displays -->
+
+## Database
+
+## Docker
+
+<!-- All in separate docker images -->
 
 ## Unified Modeling Language
 

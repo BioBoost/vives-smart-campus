@@ -117,12 +117,12 @@ Everything should be in English.
 * Friday 23/3 from 15u45 to 17u45 (in 2.80)
 * Thursday 29/3 from 8h15 to 11h30 (in 2.85)
 * Thursday 19/4 monitoraat from 8u15 to 11u30 (in 2.85)
-* Thursday 24/4 monitoraat from 13h30 to 16u30 (????)
+* Thursday 24/4 monitoraat from 13h30 to 16u30 - **not sure**
 * Thursday 26/4 from 8h15 to 11h30 (in 2.85)
 * Wednesday 2/5 monitoraat from 8u15 to 11u30 (in 2.65)
 * Thursday 3/5 from 8u15 to 11u30 (in 2.85) monitoraat from 12u30 to 14u45 (in 2.85)
 * Wednesday 9/5 monitoraat from 10u30 to 11u30 (in 2.65)
-* Tuesday 15/05 monitoraat from 12u30 to 15u30 (???? - 2.75)
+* Tuesday 15/05 monitoraat from 12u30 to 15u30 - **not sure**
 * Tuesday 17/05 from 8u15 to 11u30 (in 2.85)
 * Wednesday 23/5 from 8u15 to 11u30 (in 2.85) - **Final Presentation**
 

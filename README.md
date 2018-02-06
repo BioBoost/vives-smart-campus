@@ -4,6 +4,17 @@ New technologies enable the connectivity of all kinds of sensors to the Internet
 
 LoRaWAN is a wireless technology that enables to build IoT solutions using Ultra Low Power sensors that can communicate over kilometers of distance. LoRaWAN enables to place multiple sensors to existing or new buildings like our campus, to measure and control various parameters. The ultra low power requirements make it possible to do this with small battery powered systems. No need to add new cables or use large and bulky batteries. No need to recharge the batteries on a daily, weakly or yearly basis. LoRaWAN should be able to last up to 5 or even 10 years using a couple of AA batteries.
 
+![Smart Building](project/img/smart_building.png)
+
+To make things smarter you need a couple of basic components such as:
+
+* sensors that capture data;
+* a communication channel to a backend that stores and processes the data;
+* a web application to visualize the data;
+* logic that can act upon the gathered data.
+
+In this project we will focus on the first three components as we do not have the necessary access to the controls of the building to implement the last.
+
 ## Low Power?
 
 What is low power? This can be specific to the application. A 1kW motor on a cargo ship could be considered a 'low power' system. When speaking about the Internet of Things or small embedded systems 'low power' means something totally different. As a small rule of thumb, Embedded systems and Iot devices are split up in some categories.

@@ -20,7 +20,11 @@
 
 ## Docker
 
-<!-- All in separate docker images -->
+Docker is a service that allows the creation and running of containers based on images defined by developers. Containers package software into standardized units for development, shipment and deployment. A container image is a lightweight, stand-alone, executable package of a piece of software that includes everything needed to run it: code, runtime, system tools, system libraries, settings. Available for both Linux and Windows based apps, containerized software will always run the same, regardless of the environment. Containers isolate software from its surroundings, for example differences between development and staging environments and help reduce conflicts between teams running different software on the same infrastructure.
+
+![Docker Containers](img/docker_containers.png)
+
+For this project all above components should be placed inside containers creating a clear separation and also allowing them to be hosted on any machine / server of our liking. So basically you need at least 5 container images. A server will be made available by us. Later on container hosting will also be provided by us.
 
 ## Unified Modeling Language
 

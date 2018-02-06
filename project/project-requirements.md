@@ -9,22 +9,12 @@ The **minimum requirements** to be achieved in this project are:
  * Ultra Low Power
 * Drivers for all hardware
 * mBed compatible firmware following the Object Oriented Paradigm
-* A visually appealing dashboard
-* A database management system at the back end
-* An MQTT receiver service that populates the database
-
-## Restrictions
-
-<!-- * Battery must last for minimum 6 hours. Battery must stay in place when recharging through a USB connector.
-* Use object oriented programming languages for both the firmware as software.
-* Communication between the cases and the server must use the LoRaWAN communication protocol. -->
-
-## Valuable expansions
-
-<!-- * Updates, data or state can be send from the server to the cases.
-* Multiple types of games, ranging from time, distance and difficulty can be created and played.
-* Generate random games based on a set of restrictions
-* Use your imagination and creativity. **Suggestions are welcome and will be appreciated**. -->
+* A visually appealing dashboard using a frontend framework
+* A database management system at the backend
+* An MQTT server for backend communication and frontend updates
+* CRON jobs to update the displays
+* A backend framework with a clean REST API
+* Every separate component dockerized
 
 ## Approach
 

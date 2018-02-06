@@ -126,6 +126,8 @@ Everything should be in English.
 * Tuesday 17/05 from 8u15 to 11u30 (in 2.85)
 * Wednesday 23/5 from 8u15 to 11u30 (in 2.85) - **Final Presentation**
 
+![Indeed, a bit of a mess](img/she-said-whaaat_o_192495.jpg)
+
 ## Final notes
 
 > "De enige plaats waar succes voor werk komt, is het woordenboek." \[Vidal Sassoon\] or in English "The only place where success comes before work, is in the dictionary.

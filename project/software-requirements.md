@@ -31,3 +31,7 @@ Another view could be to show the historical data in the form of graphs and char
 Another view that the dashboard may provide is a more detailed view of a single room. It could provide other types of charts or tables providing other ways to interprete the measurements and data.
 
 ![Dashboard history and location](img/dashboard-03.jpg)
+
+## Mobile first
+
+The dashboard and managment interface should be developed with a 'mobile first' principle. This enables the monitoring and managment from any kind of device, such as smartphones and tablets. On the other hand large displays on desktop pc's and laptops must be supported as well.

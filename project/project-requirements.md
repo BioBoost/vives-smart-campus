@@ -4,9 +4,12 @@
 
 The **minimum requirements** to be achieved in this project are:
 
-* Three PCBs (occupation detector, temperature and humidity monitoring, smart signs)
- * Integrated LoRaWAN Communication
- * Ultra Low Power
+* Three types of hardware sensors/boards 
+    * occupation detector
+    * temperature and humidity monitoring
+    * smart signs
+* Integrated LoRaWAN Communication
+* Ultra Low Power designs, last for at least 1 full year on 3 AAA batteries
 * Drivers for all hardware
 * mBed compatible firmware following the Object Oriented Paradigm
 * A visually appealing dashboard using a frontend framework

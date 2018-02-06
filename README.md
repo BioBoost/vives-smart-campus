@@ -12,7 +12,7 @@ What is low power? This can be specific to the application. A 1kW motor on a car
 * Low Power: any system where power is expressed in terms of **milliamperes (mA)** or **milliWatts (mW)**
 * Ultra Low Power: any system where power is expressed in terms of **microamperes (µA)** or **microWatts (µW)**
 
-Do note that when talking about ultra low power devices, voltage is not a measure of low power. Think about the Intel core i9-7980XE being sourced at 1.4V but having a TPD of 165W. This is not a low power system in context of embedded devices.
+Do note that when talking about ultra low power devices, voltage is not a measure of low power. Think about the Intel core i9-7980XE being sourced at 1.35V but is able to draw hundredths of Watts. This is not a low power system in context of embedded devices.
 
 ## Making the Campus Smart(er)
 
@@ -26,7 +26,7 @@ It might be possible to count the heads with this kind of system, but in this ca
 
 #### Flex Desks
 
-The same hardware solution, without any modification, could also be implemented to measure the occupation of flex desks. This enables the system to monitor how many desks are occupied. All sorts of triggers could be used to optimize the collection of garbage, or when its (not) necessary to clean the desks.
+The same hardware solution, without any modification, could also be implemented to **measure occupation** of flex desks. This enables the system to monitor how many desks are occupied. All sorts of triggers could be used to optimize the collection of garbage, or when its (not) necessary to clean the desks.
 
 ![Flex Desks](project/img/flex_desk.jpg)
 

@@ -105,6 +105,57 @@ int PIRSensor::get_delta(){
 
 The TemperatureHumidity class includes the code to get a value from the actual temperature/ humidity sensor. Because the temperature and humidity sensor are in the same we have chosen to make in class TemperatureHumidity. the class si7013 is a library that we can use to get values from the sensors.
 
+### TemperatureHumidity \(constructor\)
+
+This method is the constructor of this class, here we make use of the default constructor. The constructor makes it possible to use I2C.
+
+```text
+TemperatureHumidity::TemperatureHumidity(I2C* sensorI2C) :rhtSensor(sensorI2C){ 
+}
+```
+
+### read\_values
+
+```text
+ void TemperatureHumidity::read_values() { 
+   if(!rhtSensor.check_availability(si7013, nullptr)){ 
+       wait_ms(100); 
+       int ret = rhtSensor.measure(si7013, nullptr); 
+       wait_ms(100); 
+       if (!ret) { 
+         temperature = ((rhtSensor.get_temperature()/1000.0)); 
+         humidity = ((rhtSensor.get_humidity()/1000)); 
+       } else { 
+         printf("Failed to read temperature/humidity\r\n"); 
+       }
+   } else { 
+     printf("Failed to check avail temperature/humidity\r\n"); 
+   } 
+ }
+```
+
+### get\_temperature
+
+This method is a getters that returns the temperature variable. This method makes us of the private method "read\_values", who reads tha values from the sensor.
+
+```text
+int TemperatureHumidity::get_temperature(){ 
+    read_values(); 
+    return temperature; 
+}
+```
+
+### get\_humidity
+
+This method is a getters that returns the humidity variable. This method makes us of the private method "read\_values", who reads tha values from the sensor.
+
+```text
+int TemperatureHumidity::get_humidity(){ 
+    read_values(); 
+    return humidity; 
+}
+```
+
 ## SensorData
 
 ## EnvironmentBoard

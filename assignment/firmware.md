@@ -10,7 +10,96 @@ On the image below you see the UML-diagram of our firmware solution.
 
 ## PIRSensor
 
-The PIRSensor class includes the code to get a value from the actual PIR sensor. 
+The PIRSensor class includes the code to get a value from the actual PIR sensor. The PIRSensor class exists of 6 methods, they will be explained one by one.
+
+### PIRSensor \(constructor\)
+
+This is the constructor of our PIRSensor class, here needed everything is initialized. As you can see, we make use of interrupts to detect is there is movement or not. First of all we make sure the interrupt makes use of a pulldown, this must be done otherwise the interrupt won't work as expected. Then we make two methods that wil be linked to an interrupt, one method wil be activated when there is an positive interrupt and the other one when there is an negative interrupt.  then we initialize the variable "state" to zero.
+
+```text
+PIRSensor::PIRSensor(PinName pin) : sensorInterrupt(pin) {
+    sensorInterrupt.mode(PullDown); 
+    sensorInterrupt.rise(callback(this, &PIRSensor::positive_edge_detected)); 
+    sensorInterrupt.fall(callback(this, &PIRSensor::negative_edge_detected)); 
+    this->state = LOW; 
+}
+```
+
+### start
+
+This method is activated when the program starts. This method resets every variable and starts a timer, that we will use to get timestamps.
+
+```text
+void PIRSensor::start(){ 
+    lowtime = 0; 
+    hightime = 0; 
+    timer.reset(); 
+    timer.start(); 
+}
+```
+
+### stop
+
+This method is activated just before we want to send the data with one of the transceivers. Here the timer is stopped and with the if-statement the last "delta" is added to the right time, lowtime or hightime.
+
+```text
+ void PIRSensor::stop(){ 
+   timer.stop(); 
+   if (state==LOW){
+      int deltaT = get_delta(); 
+      lowtime += deltaT; 
+    }else{ 
+      int deltaT = get_delta(); 
+      hightime += deltaT; 
+    } 
+  }
+```
+
+### positive\_edge\_detected
+
+This method is part of the interrupts. If there is a positive interrupt, this method will be activated. In this method we put STATE to high and we add the "delta" to lowtime because that was the previous time period.
+
+```text
+ void PIRSensor::positive_edge_detected() { 
+   state = HIGH; 
+   int deltaT = get_delta(); 
+   lowtime += deltaT; 
+ }
+```
+
+### negative\_edge\_detected
+
+This method does the same as the method "positive\_edge\_detected" but it works on the negative interrupt and add the delta to the hightime variable.
+
+```text
+void PIRSensor::negative_edge_detected() { 
+    state = LOW; 
+    int deltaT = get_delta(); 
+    hightime += deltaT; 
+}
+```
+
+### get\_percentage\_movement
+
+This is to only getter from the PIRSensor class. this method returns the variable percentage, This percentage represents the high time in relation to the total time.
+
+```text
+ int PIRSensor::get_percentage_movement(){ 
+   int percentage = (1.0*hightime/(hightime+lowtime))*100; 
+   return percentage; 
+ }
+```
+
+### get\_delta
+
+The code in this method appeared al lot in the code Before we had this method, so we made a private method get\_delta and when we needed to read the time, we just have to use this method. This makes our code al lot more DRY.
+
+```text
+int PIRSensor::get_delta(){ 
+    int deltaT = timer.read_ms() - lowtime - hightime; 
+    return deltaT; 
+}
+```
 
 ## TemperatureHumidity + si7013
 

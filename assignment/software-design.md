@@ -6,11 +6,11 @@ A good design will allow this project to grow to its full potential, namely a pl
 
 To get data from sensor to user, the following architecture can be used as a base.
 
-![Architecture - Sensor Data](img/sensor_data.png)
+![Architecture - Sensor Data](../.gitbook/assets/sensor_data.png)
 
 Next to that the system should also allow the displays to be updated.
 
-![Architecture - Display Updata](img/downlink_transfer.png)
+![Architecture - Display Updata](../.gitbook/assets/downlink_transfer.png)
 
 ## Backend
 
@@ -18,7 +18,7 @@ The backend is the software that runs on the server. It will provide an interfac
 
 ### NodeExpress / MVC framework
 
-Any MVC framework could be used for this task. [Node Express](https://expressjs.com/) would be a nice candidate to fulfill this task.  The JavaScript language is perfect for these kinds of applications
+Any MVC framework could be used for this task. [Node Express](https://expressjs.com/) would be a nice candidate to fulfill this task. The JavaScript language is perfect for these kinds of applications
 
 ## Frontend framework / View
 
@@ -30,13 +30,13 @@ A CSS framework will be needed as well. [Materialize](http://materializecss.com/
 
 ## MQTT
 
-MQTT is a client-server publish/subscribe messaging transport protocol. It is light weight, open, simple, and designed so as to be easy to implement. These characteristics make it ideal for use in many situations, including constrained environments such as for communication in Machine to Machine (M2M) and Internet of Things (IoT) contexts where a small code footprint is required and/or network bandwidth is limited.
+MQTT is a client-server publish/subscribe messaging transport protocol. It is light weight, open, simple, and designed so as to be easy to implement. These characteristics make it ideal for use in many situations, including constrained environments such as for communication in Machine to Machine \(M2M\) and Internet of Things \(IoT\) contexts where a small code footprint is required and/or network bandwidth is limited.
 
-The hardware sensors will need to forward their data to The Things Network (TTN) via LoRaWAN. TTN provides an MQTT interface to which clients can subscribe to get data updates.
+The hardware sensors will need to forward their data to The Things Network \(TTN\) via LoRaWAN. TTN provides an MQTT interface to which clients can subscribe to get data updates.
 
-The backend will require an MQTT client service which transfers the data from TTN to both the database and your own MQTT server, where the pure data is pushed in a format of your own choosing (for example JSON). The TTN messages contain metadata which is of no concern for this application.
+The backend will require an MQTT client service which transfers the data from TTN to both the database and your own MQTT server, where the pure data is pushed in a format of your own choosing \(for example JSON\). The TTN messages contain metadata which is of no concern for this application.
 
-This setup also allows other clients (for example the front-end) to receive the data real-time.
+This setup also allows other clients \(for example the front-end\) to receive the data real-time.
 
 Want to know more about MQTT then checkout [https://www.hivemq.com/mqtt-essentials/](https://www.hivemq.com/mqtt-essentials/).
 
@@ -60,11 +60,11 @@ A mix of two types databases could be used as well. Choose a database that is fi
 
 Docker is a service that allows the creation and running of containers based on images defined by developers. Containers package software into standardized units for development, shipment and deployment. A container image is a lightweight, stand-alone, executable package of a piece of software that includes everything needed to run it: code, runtime, system tools, system libraries, settings. Available for both Linux and Windows based apps, containerized software will always run the same, regardless of the environment. Containers isolate software from its surroundings, for example differences between development and staging environments and help reduce conflicts between teams running different software on the same infrastructure.
 
-![Docker Containers](img/docker_containers.png)
+![Docker Containers](../.gitbook/assets/docker_containers.png)
 
 For this project all above components should be placed inside containers creating a clear separation and also allowing them to be hosted on any machine / server of our liking. So basically you need at least 4 container images. A server will be made available by us. Later on container hosting will also be provided by us.
 
-![Possible Docker Containers](img/docker_containers_arch.png)
+![Possible Docker Containers](../.gitbook/assets/docker_containers_arch.png)
 
 ## Unified Modeling Language
 
@@ -80,4 +80,5 @@ The following UML diagrams should be used to explain the development and results
 
 Note: Free educational accounts can be requested at [Lucidchart.com](https://www.lucidchart.com/). Just google for "lucid charts educational account".
 
-![UML Examples](img/uml_examples.png)
+![UML Examples](../.gitbook/assets/uml_examples.png)
+

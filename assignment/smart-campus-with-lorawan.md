@@ -1,10 +1,10 @@
-# Introduction
+# Smart Campus with LoRaWAN
 
 New technologies enable the connectivity of all kinds of sensors to the Internet. These practices create what is called the Internet of Things or IoT. In recent years some technologies enable simple sensors to be part of this Internet of Things. To be successful, the connectivity must be implemented with some restrictions. The Things must use a very low power, and they must be able to communicate over large distances.
 
 LoRaWAN is a wireless technology that enables to build IoT solutions using Ultra Low Power sensors that can communicate over kilometers of distance. LoRaWAN enables to place multiple sensors to existing or new buildings like our campus, to measure and control various parameters. The ultra low power requirements make it possible to do this with small battery powered systems. No need to add new cables or use large and bulky batteries. No need to recharge the batteries on a daily, weakly or yearly basis. LoRaWAN should be able to last up to 5 or even 10 years using a couple of AA batteries.
 
-![Smart Building](.gitbook/assets/smart_building%20%281%29.png)
+![Smart Building](../.gitbook/assets/smart_building.png)
 
 To make things smarter you need a couple of basic components such as:
 
@@ -39,7 +39,7 @@ It might be possible to count the heads with this kind of system, but in this ca
 
 The same hardware solution, without any modification, could also be implemented to **measure occupation** of flex desks. This enables the system to monitor how many desks are occupied. All sorts of triggers could be used to optimize the collection of garbage, or when its \(not\) necessary to clean the desks.
 
-![Flex Desks](.gitbook/assets/flex_desk%20%281%29.jpg)
+![Flex Desks](../.gitbook/assets/flex_desk.jpg)
 
 ### Room Quality
 
@@ -55,17 +55,17 @@ The classrooms and labs could be equipped with displays showing the current occu
 
 The hallways can also be equipped with these kind of displays that are used as a digital signage system. They can provide useful information to visitors and students. For example if a workshop or event is organized it can show arrows to send people to the correct location.
 
-![Smart Signs](.gitbook/assets/smart-street-signs.jpg)
+![Smart Signs](../.gitbook/assets/smart-street-signs%20%281%29.jpg)
 
 ## Monitoring and Management
 
 All the hardware systems summed up above would be useless if the data they produce disappears in thin air. A monitoring system must be provided. All data and parameters should be stored in a **database**, and a graphical user interface should be able to visualize the data in different and useful ways, like **charts and graphs**.
 
-![Dashboard extra details](.gitbook/assets/dashboard-02%20%281%29.jpg)
+![Dashboard extra details](../.gitbook/assets/dashboard-02.jpg)
 
 On the other hand the smart signs should be able to be **managed** on this system. Adding, or changing schedules for classrooms could easily be done with this system. Updating the signs with new information should be done on an automatically timed process, **preventing the need of human intervention**.
 
 The application should also provide a **generic dashboard** that presents useful information to all the users of the campus.
 
-![Digital sign](.gitbook/assets/signage.png)
+![Digital sign](../.gitbook/assets/signage%20%281%29.png)
 

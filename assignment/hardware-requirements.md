@@ -1,9 +1,6 @@
 # Hardware Requirements
 
-Multiple hardware systems must be build.
-1. Occupation detector
-2. Temperature and humidity monitoring
-3. Smart signs
+Multiple hardware systems must be build. 1. Occupation detector 2. Temperature and humidity monitoring 3. Smart signs
 
 Designing and developing these systems must be done in an **incremental process**. Start by using development boards, breadboards and sensors to create a basic prototype. This enables to do small experiments and allows the writing of firmware. Parallel a custom PCB can be developed. This process makes sure that hardware and firmware can be developed without depending on each other.
 
@@ -12,6 +9,7 @@ Any hardware can be used. The only requirement is that it is **mBed compatible**
 ## LoRaWAN Transceiver
 
 All designs must make use of LoRaWAN. Multiple transceivers are available on the market. You can choose any of these radio's:
+
 * HopeRF RFM-95
 * Microchip RN2483
 * Murata CMWX1ZZABZ
@@ -31,7 +29,7 @@ The design must result in a circuit that consumes the minimal possible power. If
 
 The heart of the occupation detector is a digital PIR sensor: Panasonic AMN31111J. This PIR sensor is very easy to use. The output pin will toggle whenever the sensor detects movement.
 
-The detector should be enclosed in a plastic case. At the bottom of the case a magnet should be provisioned allowing the case to stick to any iron surface (casings, cabinets, ceiling,...). These enclosures can be found at [be.farnell.com](http://be.farnell.com). Magnets can be obtained at [www.supermagnete.be](http://www.supermagnete.be).
+The detector should be enclosed in a plastic case. At the bottom of the case a magnet should be provisioned allowing the case to stick to any iron surface \(casings, cabinets, ceiling,...\). These enclosures can be found at [be.farnell.com](http://be.farnell.com). Magnets can be obtained at [www.supermagnete.be](http://www.supermagnete.be).
 
 The detector should accumulate the movement detections over a fixed or variable amount of time and send a summary to the server. For example detected 12 movements in the last minute, or detected only 1 movement in the last 3 hours.
 
@@ -41,7 +39,7 @@ The detector must also periodically inform the server of its battery state. This
 
 ## Temperature and Humidity Monitor
 
-The temperature and humidity monitor should be developed as an extension of the existing occupation detector.  Extend the existing design to add the new functionality and make use of the lessons learned from the previous board. Keep in mind that the power consumption must not exceed the existing limit of 100µA average. The same enclosure must be compatible with these new features.
+The temperature and humidity monitor should be developed as an extension of the existing occupation detector. Extend the existing design to add the new functionality and make use of the lessons learned from the previous board. Keep in mind that the power consumption must not exceed the existing limit of 100µA average. The same enclosure must be compatible with these new features.
 
 ## Smart Signs
 
@@ -50,6 +48,7 @@ To build the smart signs, a power efficient technology must be used. **Epaper** 
 The smart signs must have a notion of the current time. Therefore a **Real Time Clock** or RTC must be available to the system.
 
 The smart signs must support at least the following two use cases:
+
 * Classroom labels
 * Signposts
 
@@ -60,7 +59,7 @@ A summary of the schedule of the current day must be visible on the display. The
 * Room number
 * Current date
 * Course name
-* Teachers involved in the course (could be multiple)
+* Teachers involved in the course \(could be multiple\)
 * Start hour
 * End hour
 
@@ -76,4 +75,5 @@ Signposts will be placed in the hallway or building entrance. They will inform v
 
 When no events are planned for that day, information about upcoming events can be displayed, or a simple welcome message.
 
-![Digital sign example](img/signage.png)
+![Digital sign example](../.gitbook/assets/signage.png)
+

@@ -5,9 +5,9 @@
 The **minimum requirements** to be achieved in this project are:
 
 * Three types of hardware sensors/boards
-    * occupation detector
-    * temperature and humidity monitoring
-    * smart signs
+  * occupation detector
+  * temperature and humidity monitoring
+  * smart signs
 * Integrated LoRaWAN Communication
 * Ultra Low Power designs, last for at least 1 full year on 3 AAA batteries
 * Drivers for all hardware
@@ -44,7 +44,7 @@ To meet the objectives of the project, some requirements are mandatory:
 
 The team of hardware developers should meet/communicate on a regular basis with the software development team. The use of the iterative and incremental Agile software development methodology of **SCRUM** \(see **image below**\) is mandatory. One of the major contributors to the successful realization of a project is an intense, regular communication between the hardware and the software engineering teams. Detailed agreements on interfaces, connectors, communication protocols, pinout, ... are mandatory and fundamental to guarantee the successful realization of your project within a realistic period of time.
 
-![Agile SCRUM Methodology of software development](img/SCRUM.jpg)
+![Agile SCRUM Methodology of software development](../.gitbook/assets/scrum.jpg)
 
 ## Git
 
@@ -54,11 +54,11 @@ Note: Even failed experiments or code not used in the end result must be stored 
 
 ## Redmine
 
-URL: [http://project.labict.be/](http://project.labict.be/ "Redmine - Project Management System")
+URL: [http://project.labict.be/](http://project.labict.be/)
 
 > **Redmine** is a flexible project management web application. Written using the Ruby on Rails framework, it is cross-platform and cross-database.
 
-![the REDMINE Project Management Web Application](img/redmine2.jpg)
+![the REDMINE Project Management Web Application](../.gitbook/assets/redmine2.jpg)
 
 During this first session, a detailed planning must be made for the full length of time for the project. Each member must have at least one task assigned to himself at any moment during the development of the project.
 
@@ -66,7 +66,7 @@ At the end of each project day an evaluation will be made for each group based o
 
 > If it's not in the logs, it never happened !
 
-![IT project estimates](img/it-project-estimates.jpg)
+![IT project estimates](../.gitbook/assets/it-project-estimates.jpg)
 
 ## Slack
 
@@ -94,7 +94,7 @@ The whole group should give a presentation of the final project in the last week
 
 This presentation should include:
 
-* 5 minutes presentation per person (every member of the group should take part in the final presentation)
+* 5 minutes presentation per person \(every member of the group should take part in the final presentation\)
 * 10 minutes of demonstration
 * 10 minutes of questions from the audience
 
@@ -102,34 +102,32 @@ Everything should be in English.
 
 ## Roadmap
 
-* Wednesday 7/2 from 8h15 to 11h30 (in 2.85) and monitoraat from 14h45 to 17u45 (in 2.85)
-* Wednesday 7/3 from 8h15 to 11h30 (in 2.85) and monitoraat from 14h45 to 17u45 (in 2.85)
-* Wednesday 14/3 from 8h15 to 11h30 (in 2.85) and monitoraat from 14h30 to 15u30 (in 2.85)
-* Friday 16/3 monitoraat from 15h45 to 17u45 (in 2.75)
-* Wednesday 21/3 from 14h45 to 18u45 (in 2.85)
-* Friday 23/3 from 15u45 to 17u45 (in 2.80)
-* Thursday 29/3 from 8h15 to 11h30 (in 2.85)
-* Thursday 19/4 monitoraat from 8u15 to 11u30 (in 2.85)
+* Wednesday 7/2 from 8h15 to 11h30 \(in 2.85\) and monitoraat from 14h45 to 17u45 \(in 2.85\)
+* Wednesday 7/3 from 8h15 to 11h30 \(in 2.85\) and monitoraat from 14h45 to 17u45 \(in 2.85\)
+* Wednesday 14/3 from 8h15 to 11h30 \(in 2.85\) and monitoraat from 14h30 to 15u30 \(in 2.85\)
+* Friday 16/3 monitoraat from 15h45 to 17u45 \(in 2.75\)
+* Wednesday 21/3 from 14h45 to 18u45 \(in 2.85\)
+* Friday 23/3 from 15u45 to 17u45 \(in 2.80\)
+* Thursday 29/3 from 8h15 to 11h30 \(in 2.85\)
+* Thursday 19/4 monitoraat from 8u15 to 11u30 \(in 2.85\)
 * Thursday 24/4 monitoraat from 13h30 to 16u30 - **not sure**
-* Thursday 26/4 from 8h15 to 11h30 (in 2.85)
-* Wednesday 2/5 monitoraat from 8u15 to 11u30 (in 2.65)
-* Thursday 3/5 from 8u15 to 11u30 (in 2.85) monitoraat from 12u30 to 14u45 (in 2.85)
-* Wednesday 9/5 monitoraat from 10u30 to 11u30 (in 2.65)
+* Thursday 26/4 from 8h15 to 11h30 \(in 2.85\)
+* Wednesday 2/5 monitoraat from 8u15 to 11u30 \(in 2.65\)
+* Thursday 3/5 from 8u15 to 11u30 \(in 2.85\) monitoraat from 12u30 to 14u45 \(in 2.85\)
+* Wednesday 9/5 monitoraat from 10u30 to 11u30 \(in 2.65\)
 * Tuesday 15/05 monitoraat from 12u30 to 15u30 - **not sure**
-* Tuesday 17/05 from 8u15 to 11u30 (in 2.85)
-* Wednesday 23/5 from 8u15 to 11u30 (in 2.85) - **Final Presentation**
+* Tuesday 17/05 from 8u15 to 11u30 \(in 2.85\)
+* Wednesday 23/5 from 8u15 to 11u30 \(in 2.85\) - **Final Presentation**
 
-![Indeed, a bit of a mess](img/she-said-whaaat_o_192495.jpg)
+![Indeed, a bit of a mess](../.gitbook/assets/she-said-whaaat_o_192495.jpg)
 
 ## Final notes
 
 > "De enige plaats waar succes voor werk komt, is het woordenboek." \[Vidal Sassoon\] or in English "The only place where success comes before work, is in the dictionary.
 
-<!-- How to split these lines? -->
-
-> "Een expert is iemand die binnen een beperkt vakgebied alle mogelijke fouten heeft gemaakt."
-> or in English "An expert is someone who made every mistake within his professional discipline.
+> "Een expert is iemand die binnen een beperkt vakgebied alle mogelijke fouten heeft gemaakt." or in English "An expert is someone who made every mistake within his professional discipline.
 
 As a matter of fact, your team should always avoid product development disasters, as presented in the following picture:
 
-![Product development](img/IT.png)
+![Product development](../.gitbook/assets/it.png)
+

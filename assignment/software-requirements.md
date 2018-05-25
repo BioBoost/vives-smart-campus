@@ -1,16 +1,18 @@
 # Software Requirements
 
+## Software Requirements
+
 The dashboard should display a floorplan of the second floor containing an overview of the stats being measured. For example the temperature and movement inside a room can be displayed as an overlay over the map. The sensor data should also be displayed using graphs that display the data of at least a week.
 
 Administrators should be able to schedule events to announce on the displays
 
-## User interface
+### User interface
 
 A user interface will need to be build in order to do something useful with the captured sensor data. This dashboard will inform any visitors and students with the various parameters that are measured.
 
 At the other hand a management the smart signs must be at hand. It must be possible to manage schedules for the different rooms, and update information about new workshops or give default information like the weather. An administrator must be able to manage all these functions using a web interface.
 
-### Management
+#### Management
 
 The smart signs must al have a custom schedule that can be programmed by an administrator. He must be able to make changes to existing schedules.
 
@@ -18,23 +20,25 @@ For events, the start and end times must be provided to the signs. This enables 
 
 The management part of the user interface will consist out of forms that enable CRUD actions.
 
-### Dashboard
+#### Dashboard
 
 An example of a dashboard could be as shown in the next picture. The picture shows a very visual layout of a building with the current sensor values visible for the different rooms.
 
-![Dashboard building plan](img/dashboard-01.jpg)
+![Dashboard building plan](../.gitbook/assets/dashboard-01.jpg)
 
 Another view could be to show the historical data in the form of graphs and charts. The values of the last week, day or month could be displayed.
 
-![Dashboard extra details](img/dashboard-02.jpg)
+![Dashboard extra details](../.gitbook/assets/dashboard-02.jpg)
 
 Another view that the dashboard may provide is a more detailed view of a single room. It could provide other types of charts or tables providing other ways to interprete the measurements and data.
 
-![Dashboard history and location](img/dashboard-03.jpg)
-<<<<<<< HEAD
-=======
+![Dashboard history and location](../.gitbook/assets/dashboard-03.jpg)
 
-## Mobile first
+## &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+
+### Mobile first
 
 The dashboard and managment interface should be developed with a 'mobile first' principle. This enables the monitoring and managment from any kind of device, such as smartphones and tablets. On the other hand large displays on desktop pc's and laptops must be supported as well.
->>>>>>> 9b1883576754628e55e5f8ad190d07a0c00260cc
+
+> > > > > > > 9b1883576754628e55e5f8ad190d07a0c00260cc
+

@@ -1,5 +1,5 @@
 ---
-description: all the information about the formware.
+description: all the information about the firmware.
 ---
 
 # Firmware

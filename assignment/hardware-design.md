@@ -14,13 +14,36 @@ In an early stage, a fast proof-of-concept must be build using a prototype desig
 
 ![A nice example of a Prototype](../.gitbook/assets/prototype.jpg)
 
+Our pcb, \(designed by Gain Gary and Bonne Robbe\) is made in the recommended software CircuitMaker. Afther a long time of searching how the whole program works, started I \(Bonne Robbe\) to design a schematic and board just to test the temperature/humidity sensor \(si7013Atum20\). This because the sensor is too small to test it on a breadboard.
+
+The schematic:  
+
+
+![schematic for si7013Atum20](../.gitbook/assets/image%20%281%29.png)
+
+the board:
+
+![board for si7013Atum20](../.gitbook/assets/image.png)
+
+
+
+
+
+
+
 ## Custom PCB
 
-In the next stage, a custom PCB must be build using only the essential components. The PCB must also make use of battery power to operate, and must be optimized to run as long as possible. PCB's can be ordered online using a service like [http://www.allpcb.com/](http://www.allpcb.com/) or an alternative service.
+In the next stage, a custom PCB must be build using only the essential components. Tshe PCB must also make use of battery power to operate, and must be optimized to run as long as possible. PCB's can be ordered online using a service like [http://www.allpcb.com/](http://www.allpcb.com/) or an alternative service.
 
 The PCB can be designed using the design software of your preference. We recommend [CircuitMaker](https://circuitmaker.com/), but [Eagle](https://www.autodesk.com/products/eagle/overview) is also a good option.
 
 ![Custom PCB](../.gitbook/assets/custom_pcb.png)
+
+Afther the works I \(Robbe\) did on the temp/hum sensor and the schematic was ready. Started Gary and I the designing of the pcb itself.
+
+the board with all layers:
+
+![board lay-out](../.gitbook/assets/image%20%282%29.png)
 
 ## mBed device drivers
 

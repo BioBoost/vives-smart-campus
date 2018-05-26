@@ -45,16 +45,24 @@ The board with all layers:
 
 * Crystal for usage without internal clock​ 32KHz \(X1\)
 * Test pins above to deactivate the voltage regulator for testing​
+* cut-outs around the temp/hum sensor to avoid extra heat from components nearby
+* Placed the voltage regulator far away from the temp/hum sensor to avoid extra heating.
 * Resistors/capacitors all 0805​
 * Power TEMP/HUMI and Power PIR1 are able to swith by a resistor pad so If they are not needed or don’t work its possible to switch them off​
 * Antenna trace width is 1mm thick. Smaller traces would result in a bad impedance matching             \(50 ohms\). What would make the antenna inefficient, or even unable to work at all.​
-* We also have an extra crystal on it to stabilize usb connection \(8MHz\).
+* We also have an extra crystal on it to stabilize usb connection \(Y1,8MHz\).
 
 ![board lay-out](../.gitbook/assets/image%20%283%29.png)
 
 
 
 Board lay-out as seen from the bottom layer:
+
+* Testpins for programming µC​ are those in the left corner containing NRST,DIO1,TCK and TMS pin.
+* Testpins above connected with the uart of the µC to read from it. Via those pins it is able to check the data from the temp/hum sensor or PIR.
+* Putted them togheter with the reset button on the bottom layer to test/reset it when its in his case. 
+
+
 
 ![board lay-out as seen from the bottom](../.gitbook/assets/image.png)
 

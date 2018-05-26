@@ -227,20 +227,20 @@ And here you can see the code we've made to realize this conversion:
 
 ```cpp
 void SensorDataByteSerializer::serialize(SensorData dataPacket, uint8_t* payload, int maxPayload)
- {
- if (maxPayload >= PAYLOAD_SIZE)
- {
-   temp = dataPacket.getTemperature();
-   hum = dataPacket.getHumidity();
-   pir = dataPacket.getMotion();
-   
-   payload[0] = (uint8_t) temp >> 8;
-   payload[1] = (uint8_t) temp & 0xFF;
-   payload[2] = (uint8_t) hum;
-   payload[3] = (uint8_t) pir >> 8;
-   payload[4] = (uint8_t) pir & 0xFF;
+{
+   if (maxPayload >= PAYLOAD_SIZE)
+   {
+       temp = dataPacket.getTemperature();
+       hum = dataPacket.getHumidity();
+       pir = dataPacket.getMotion();
+       
+       payload[0] = (uint8_t) temp >> 8;
+       payload[1] = (uint8_t) temp & 0xFF;
+       payload[2] = (uint8_t) hum;
+       payload[3] = (uint8_t) pir >> 8;
+       payload[4] = (uint8_t) pir & 0xFF;
+   }
  }
-}
 ```
 
 ## Transceivers

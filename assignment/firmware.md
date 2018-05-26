@@ -172,13 +172,15 @@ int TemperatureHumidity::get_humidity(){
 As you can see, we made two constructors. The first constructor is the default constructor and set the three values to zero. The second constructor expects three arguments, these arguments will be initialized in the constructor.
 
 ```cpp
-SensorData::SensorData(){ 
+SensorData::SensorData()
+{ 
     temperature = 0.0; 
     motion = 0; 
     humidity = 0.0;
 }
 
-SensorData::SensorData(double inputTemperature, int iputMotion, double inputHumidity){ 
+SensorData::SensorData(double inputTemperature, int iputMotion, double inputHumidity)
+{ 
     temperature = inputTemperature; 
     motion = iputMotion; 
     humidity = inputHumidity;
@@ -209,7 +211,7 @@ int SensorData::getMotion(){
 
 This method returns a double humidity.
 
-```text
+```cpp
 double SensorData::getHumidity(){ 
     return humidity;
 }
@@ -221,13 +223,20 @@ The purpose of the EnvironmentSensorBoard is to send data to a transceiver. The 
 
 This class has three methods.
 
+### Constructor
+
 ```cpp
-EnvironmentSensorBoard::EnvironmentSensorBoard(Transceiver * inputTransceiver): motionSensor(PA_9), sensorI2C(PC_1, PC_0) //PC_1=SDA, PC_0=SCL
+EnvironmentSensorBoard::EnvironmentSensorBoard(Transceiver * inputTransceiver)
+: motionSensor(PA_9), sensorI2C(PC_1, PC_0) //PC_1=SDA, PC_0=SCL
 { 
     this->transceiver = inputTransceiver;
     temperatureSensor = new TemperatureHumidity(&sensorI2C);
 }
 ```
+
+### update
+
+Due to circumstances, we did not end up using this method. The function was put it into comment.
 
 ```cpp
 void EnvironmentSensorBoard::update()
@@ -242,9 +251,20 @@ void EnvironmentSensorBoard::update()
 }
 ```
 
+### get\_data
 
-
-123456
+```cpp
+SensorData EnvironmentSensorBoard::get_data ()
+{
+  double temperature = temperatureSensor->get_temperature();
+  int motion = motionSensor.get_percentage_movement();
+  double humidity = temperatureSensor->get_humidity();
+  
+  SensorData data (temperature, motion, humidity);
+  
+  return data;
+}
+```
 
 ## SensorDataByteSerializer
 
@@ -259,7 +279,8 @@ The `sensor data byte serializer`  puts the sensor data into a format that will 
 And here you can see the code we've made to realize this conversion:
 
 ```cpp
-void SensorDataByteSerializer::serialize(SensorData dataPacket, uint8_t* payload, int maxPayload)
+void SensorDataByteSerializer::serialize(SensorData dataPacket, 
+                                            uint8_t* payload, int maxPayload)
 {
    if (maxPayload >= PAYLOAD_SIZE)
    {
@@ -277,6 +298,66 @@ void SensorDataByteSerializer::serialize(SensorData dataPacket, uint8_t* payload
 ```
 
 ## Transceivers
+
+As explained int the 'EnvironmentBoard' section, we want to chose between different transceivers, to which data will be sent. We have made several transceivers, which can be found bellow.
+
+### LoRa Transceiver
+
+Due to circumstances, we did not make a separate LoRa transceiver class. In stead, all functionallity can be found in the main class.
+
+#### main
+
+The main function has a number of tasks:
+
+* Store the status of a call to LoRaWAN protocol,
+* Initialize LoRaWAN stack,
+* Prepare application callbacks,
+* Set number of retries in case of CONFIRMED messages,
+* Enable adaptive data rate,
+* Make your event queue dispatching events forever.
+
+#### send\_message
+
+In the code below you will find the `send_message` function. The `tx_buffer` variable needs to be filled with 'serialized' data, which comes from the serializer class. This can be seen in lines 6 - 11.
+
+```cpp
+static void send_message()
+{
+    uint16_t packet_len;
+    int16_t retcode;
+    
+    SensorData data = board.get_data();
+    SensorDataByteSerializer payload;
+    packet_len = payload.payload_size();
+    payload.serialize(data, tx_buffer, LORAMAC_PHY_MAXPAYLOAD);
+    
+    packet_len = 5;
+    
+    retcode = lorawan.send(MBED_CONF_LORA_APP_PORT, tx_buffer, packet_len,
+                                MSG_CONFIRMED_FLAG);
+                                
+    if (retcode < 0){
+        retcode == LORAWAN_STATUS_WOULD_BLOCK ? printf("send - WOULD BLOCK\r\n")
+            : printf("\r\n send() - Error code %d \r\n", retcode);
+        return;
+    }
+    
+    printf("\r\n %d bytes scheduled for transmission \r\n", retcode);
+    memset(tx_buffer, 0, LORAMAC_PHY_MAXPAYLOAD);
+}
+```
+
+Note that a board was made in top of the program.
+
+```cpp
+EnvironmentSensorBoard board(nullptr);
+```
+
+We pass `nullptr` as argument, this is because we did not end up moving the LoRaWAN functionallity to a seperate class. 
+
+### Fake Transceiver
+
+
 
 ## 
 

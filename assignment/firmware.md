@@ -1,5 +1,8 @@
 ---
-description: all the information about the firmware.
+description: >-
+  In this chapter you will find information about the firmware that runs on our
+  PCB's. You can find the program in the following Github repository:
+  https://github.com/Projectwerk2-2018/Firmware
 ---
 
 # Firmware

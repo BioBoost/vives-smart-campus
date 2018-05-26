@@ -19,11 +19,11 @@ Our pcb, \(designed by Gain Gary and Bonne Robbe\) is made in the recommended so
 The schematic:  
 
 
-![schematic for si7013Atum20](../.gitbook/assets/image%20%281%29.png)
+![schematic for si7013Atum20](../.gitbook/assets/image%20%282%29.png)
 
 the board:
 
-![board for si7013Atum20](../.gitbook/assets/image.png)
+![board for si7013Atum20](../.gitbook/assets/image%20%281%29.png)
 
 
 
@@ -41,9 +41,22 @@ The PCB can be designed using the design software of your preference. We recomme
 
 Afther the works I \(Robbe\) did on the temp/hum sensor and the schematic was ready. Started Gary and I the designing of the pcb itself.
 
-the board with all layers:
+The board with all layers:
 
-![board lay-out](../.gitbook/assets/image%20%282%29.png)
+* Crystal for usage without internal clock​ 32KHz \(X1\)
+* Test pins above to deactivate the voltage regulator for testing​
+* Resistors/capacitors all 0805​
+* Power TEMP/HUMI and Power PIR1 are able to swith by a resistor pad so If they are not needed or don’t work its possible to switch them off​
+* Antenna trace width is 1mm thick. Smaller traces would result in a bad impedance matching             \(50 ohms\). What would make the antenna inefficient, or even unable to work at all.​
+* We also have an extra crystal on it to stabilize usb connection \(8MHz\).
+
+![board lay-out](../.gitbook/assets/image%20%283%29.png)
+
+
+
+Board lay-out as seen from the bottom layer:
+
+![board lay-out as seen from the bottom](../.gitbook/assets/image.png)
 
 ## mBed device drivers
 

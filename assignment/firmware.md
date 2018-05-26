@@ -353,7 +353,15 @@ Note that a board was made in top of the program.
 EnvironmentSensorBoard board(nullptr);
 ```
 
-We pass `nullptr` as argument, this is because we did not end up moving the LoRaWAN functionallity to a seperate class. 
+We pass `nullptr` as argument, this is because we did not end up moving the LoRaWAN functionallity to a separate class. 
+
+#### receive\_message
+
+The program has a `receive_message` function, but is not used.
+
+#### lora\_event\_handler
+
+This function has a lot of code, you can find it in our github repository \(linked at the top of this page\).
 
 ### Fake Transceiver
 

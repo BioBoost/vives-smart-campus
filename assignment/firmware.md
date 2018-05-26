@@ -163,7 +163,7 @@ int TemperatureHumidity::get_humidity(){
 
 ## SensorData
 
-## SensorData \(constructor\)
+### SensorData \(constructor\)
 
 As you can see, we made two constructors. The first constructor is the default constructor and set the three values to zero. The second constructor expects three arguments, these arguments will be initialized in the constructor.
 
@@ -181,7 +181,7 @@ SensorData::SensorData(double inputTemperature, int iputMotion, double inputHumi
 }
 ```
 
-## getTemperature
+### getTemperature
 
 This method returns a double temperature.
 
@@ -191,7 +191,7 @@ double SensorData::getTemperature(){
 }
 ```
 
-## getMotion
+### getMotion
 
 This method returns a int motion.
 
@@ -201,7 +201,7 @@ int SensorData::getMotion(){
 }
 ```
 
-## getHumidity
+### getHumidity
 
 This method returns a double humidity.
 

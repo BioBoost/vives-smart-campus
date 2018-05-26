@@ -7,6 +7,10 @@ description: >-
 
 # Firmware
 
+## Prologue
+
+We started from a project which already had LoRaWAN functionallity in it. The repository can be found here: [https://github.com/janjongboom/mbed-os-example-lorawan-minimal](https://github.com/janjongboom/mbed-os-example-lorawan-minimal)
+
 On the image below you see the UML-diagram of our firmware solution.
 
 
@@ -213,13 +217,42 @@ double SensorData::getHumidity(){
 
 ## EnvironmentBoard
 
+The purpose of the EnvironmentSensorBoard is to send data to a transceiver. The idea is that you can chose a transceiver \(LoRa- or terminaltransceiver\) to which data will be sent.
+
+This class has three methods.
+
+```cpp
+EnvironmentSensorBoard::EnvironmentSensorBoard(Transceiver * inputTransceiver): motionSensor(PA_9), sensorI2C(PC_1, PC_0) //PC_1=SDA, PC_0=SCL
+{ 
+    this->transceiver = inputTransceiver;
+    temperatureSensor = new TemperatureHumidity(&sensorI2C);
+}
+```
+
+```cpp
+void EnvironmentSensorBoard::update()
+{ 
+    double temperature = temperatureSensor.get_temperature_value();
+    int motion = motionSensor.get_percentage_movement();
+    double humidity = humiditySensor.get_humidity_value();
+    
+    SensorData data(temperature, motion, humidity);
+    
+    transceiver->send_message(data);
+}
+```
+
+
+
+123456
+
 ## SensorDataByteSerializer
 
 The `sensor data byte serializer`  puts the sensor data into a format that will be sent via LoRaWAN. You can see the format we've chosen here:
 
 | **Sensor** | **Size** | **Datatype** | **Description** |
 | --- | --- | --- | --- |
-| Temperature | 2 bytes | int | Send an integer from the PCB \(21.5 \* 10 = 215\) and devide it by 10 in the filter. |
+| Temperature | 2 bytes | int | Send an integer from the PCB |
 | Humidity | 1 byte | int | value between 0 and 100 \(in %\) |
 | Movement | 2 byte | int | Amount of movements in a certain timeframe |
 

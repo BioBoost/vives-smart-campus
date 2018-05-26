@@ -21,7 +21,7 @@ The PIRSensor class includes the code to get a value from the actual PIR sensor.
 
 This is the constructor of our PIRSensor class, here needed everything is initialized. As you can see, we make use of interrupts to detect is there is movement or not. First of all we make sure the interrupt makes use of a pulldown, this must be done otherwise the interrupt won't work as expected. Then we make two methods that wil be linked to an interrupt, one method wil be activated when there is an positive interrupt and the other one when there is an negative interrupt.  then we initialize the variable "state" to zero.
 
-```text
+```cpp
 PIRSensor::PIRSensor(PinName pin) : sensorInterrupt(pin) {
     sensorInterrupt.mode(PullDown); 
     sensorInterrupt.rise(callback(this, &PIRSensor::positive_edge_detected)); 
@@ -34,7 +34,7 @@ PIRSensor::PIRSensor(PinName pin) : sensorInterrupt(pin) {
 
 This method is activated when the program starts. This method resets every variable and starts a timer, that we will use to get timestamps.
 
-```text
+```cpp
 void PIRSensor::start(){ 
     lowtime = 0; 
     hightime = 0; 
@@ -47,7 +47,7 @@ void PIRSensor::start(){
 
 This method is activated just before we want to send the data with one of the transceivers. Here the timer is stopped and with the if-statement the last "delta" is added to the right time, lowtime or hightime.
 
-```text
+```cpp
  void PIRSensor::stop(){ 
    timer.stop(); 
    if (state==LOW){
@@ -64,7 +64,7 @@ This method is activated just before we want to send the data with one of the tr
 
 This method is part of the interrupts. If there is a positive interrupt, this method will be activated. In this method we put STATE to high and we add the "delta" to lowtime because that was the previous time period.
 
-```text
+```cpp
  void PIRSensor::positive_edge_detected() { 
    state = HIGH; 
    int deltaT = get_delta(); 
@@ -76,7 +76,7 @@ This method is part of the interrupts. If there is a positive interrupt, this me
 
 This method does the same as the method "positive\_edge\_detected" but it works on the negative interrupt and add the delta to the hightime variable.
 
-```text
+```cpp
 void PIRSensor::negative_edge_detected() { 
     state = LOW; 
     int deltaT = get_delta(); 
@@ -88,7 +88,7 @@ void PIRSensor::negative_edge_detected() {
 
 This is to only getter from the PIRSensor class. this method returns the variable percentage, This percentage represents the high time in relation to the total time.
 
-```text
+```cpp
  int PIRSensor::get_percentage_movement(){ 
    int percentage = (1.0*hightime/(hightime+lowtime))*100; 
    return percentage; 
@@ -99,7 +99,7 @@ This is to only getter from the PIRSensor class. this method returns the variabl
 
 The code in this method appeared al lot in the code Before we had this method, so we made a private method get\_delta and when we needed to read the time, we just have to use this method. This makes our code al lot more DRY.
 
-```text
+```cpp
 int PIRSensor::get_delta(){ 
     int deltaT = timer.read_ms() - lowtime - hightime; 
     return deltaT; 
@@ -114,14 +114,14 @@ The TemperatureHumidity class includes the code to get a value from the actual t
 
 This method is the constructor of this class, here we make use of the default constructor. The constructor makes it possible to use I2C.
 
-```text
+```cpp
 TemperatureHumidity::TemperatureHumidity(I2C* sensorI2C) :rhtSensor(sensorI2C){ 
 }
 ```
 
 ### read\_values
 
-```text
+```cpp
  void TemperatureHumidity::read_values() { 
    if(!rhtSensor.check_availability(si7013, nullptr)){ 
        wait_ms(100); 
@@ -143,7 +143,7 @@ TemperatureHumidity::TemperatureHumidity(I2C* sensorI2C) :rhtSensor(sensorI2C){
 
 This method is a getters that returns the temperature variable. This method makes us of the private method "read\_values", who reads tha values from the sensor.
 
-```text
+```cpp
 int TemperatureHumidity::get_temperature(){ 
     read_values(); 
     return temperature; 
@@ -154,7 +154,7 @@ int TemperatureHumidity::get_temperature(){
 
 This method is a getters that returns the humidity variable. This method makes us of the private method "read\_values", who reads tha values from the sensor.
 
-```text
+```cpp
 int TemperatureHumidity::get_humidity(){ 
     read_values(); 
     return humidity; 
@@ -167,7 +167,7 @@ int TemperatureHumidity::get_humidity(){
 
 As you can see, we made two constructors. The first constructor is the default constructor and set the three values to zero. The second constructor expects three arguments, these arguments will be initialized in the constructor.
 
-```text
+```cpp
 SensorData::SensorData(){ 
     temperature = 0.0; 
     motion = 0; 
@@ -185,7 +185,7 @@ SensorData::SensorData(double inputTemperature, int iputMotion, double inputHumi
 
 This method returns a double temperature.
 
-```text
+```cpp
 double SensorData::getTemperature(){ 
     return temperature;
 }
@@ -195,7 +195,7 @@ double SensorData::getTemperature(){
 
 This method returns a int motion.
 
-```text
+```cpp
 int SensorData::getMotion(){ 
     return motion;
 }

@@ -52,7 +52,7 @@ The board with all layers:
 * Antenna trace width is 1mm thick. Smaller traces would result in a bad impedance matching             \(50 ohms\). What would make the antenna inefficient, or even unable to work at all.​
 * We also have an extra crystal on it to stabilize usb connection \(Y1,8MHz\).
 
-![board lay-out](../.gitbook/assets/image%20%283%29.png)
+![board lay-out](../.gitbook/assets/image%20%284%29.png)
 
 
 

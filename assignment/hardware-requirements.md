@@ -25,6 +25,18 @@ An AAA battery has a typical capacity of around 1000mAh. 1 year consists of 8760
 
 The design must result in a circuit that consumes the minimal possible power. If a longer lifetime then this minimum of 1 year is achieved, it will be extra rewarded.
 
+**Why I \(Robbe\) have chosen those battery's:**
+
+A battery’s capacity is expressed in Ampere-hours \(Ah\). This dictates the period of time that it will be able to provide a given current. The greater the capacity, the longer the battery will last. Capacity is affected by three things: the type of battery, number of components within the battery, and its construction. Every battery that isn’t used for a long time shall lose some of his capacity. Only lithium batteries doesn't have that problem. Also Disposable batteries last longer than rechargeable batteries, but only initially.
+
+The tecxus Lithium batteries have a longer service life than ever before, up to 7 times longer than comparable alkaline batteries. This is made possible by state of the art technology. They boast excellent performance, quality and durability; especially in devices with high power consumption. This allows to significantly improved stand by times and service performance of energy-intensive devices, such as digital cameras, MP3 players, portable CD players, camcorders, and electronic games, even for extreme temperatures \(-20° - +60°\). The tecxus Lithium batteries are storable for up to 10 years and weight 30% less than standard alkaline batteries.
+
+![lithium compared with alkaline](../.gitbook/assets/image%20%283%29.png)
+
+**More about that can be found in the datasheet:**
+
+[http://data.energizer.com/pdfs/l92.pdf](http://data.energizer.com/pdfs/l92.pdf)
+
 ## Occupation Detector
 
 The heart of the occupation detector is a digital PIR sensor: Panasonic AMN31111J. This PIR sensor is very easy to use. The output pin will toggle whenever the sensor detects movement.

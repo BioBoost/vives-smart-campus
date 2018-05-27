@@ -33,11 +33,13 @@ the board:
 
 ## Custom PCB
 
-In the next stage, a custom PCB must be build using only the essential components. Tshe PCB must also make use of battery power to operate, and must be optimized to run as long as possible. PCB's can be ordered online using a service like [http://www.allpcb.com/](http://www.allpcb.com/) or an alternative service.
+In the next stage, a custom PCB must be build using only the essential components. The PCB must also make use of battery power to operate, and must be optimized to run as long as possible. PCB's can be ordered online using a service like [http://www.allpcb.com/](http://www.allpcb.com/) or an alternative service.
 
 The PCB can be designed using the design software of your preference. We recommend [CircuitMaker](https://circuitmaker.com/), but [Eagle](https://www.autodesk.com/products/eagle/overview) is also a good option.
 
 ![Custom PCB](../.gitbook/assets/custom_pcb.png)
+
+For the design of the custom PCB I \(Lennert Bogaert\) used the recommend software CircuitMaker.
 
 Afther the works I \(Robbe\) did on the temp/hum sensor and the schematic was ready. Started Gary and I the designing of the pcb itself.
 

@@ -19,11 +19,11 @@ Our pcb, \(designed by Gain Gary and Bonne Robbe\) is made in the recommended so
 The schematic:  
 
 
-![schematic for si7013Atum20](../.gitbook/assets/image%20%286%29.png)
+![schematic for si7013Atum20](../.gitbook/assets/image%20%287%29.png)
 
 the board:
 
-![board for si7013Atum20](../.gitbook/assets/image%20%284%29.png)
+![board for si7013Atum20](../.gitbook/assets/image%20%285%29.png)
 
 
 
@@ -112,7 +112,7 @@ The board with all layers:
 * Antenna trace width is 1mm thick. Smaller traces would result in a bad impedance matching             \(50 ohms\). What would make the antenna inefficient, or even unable to work at all.​
 * We also have an extra crystal on it to stabilize usb connection \(Y1,8MHz\).
 
-![board lay-out](../.gitbook/assets/image%20%288%29.png)
+![board lay-out](../.gitbook/assets/image%20%2810%29.png)
 
 
 
@@ -124,7 +124,7 @@ Board lay-out as seen from the bottom layer:
 
 
 
-![board lay-out as seen from the bottom](../.gitbook/assets/image%20%283%29.png)
+![board lay-out as seen from the bottom](../.gitbook/assets/image%20%284%29.png)
 
 ## mBed device drivers
 
@@ -144,13 +144,13 @@ More info about mBed OS can be found at [https://os.mbed.com/](https://os.mbed.c
 
 made by Robbe
 
-![Farnell component list 1](../.gitbook/assets/image%20%285%29.png)
+![Farnell component list 1](../.gitbook/assets/image%20%286%29.png)
 
-![Farnell component list 2](../.gitbook/assets/image%20%282%29.png)
+![Farnell component list 2](../.gitbook/assets/image%20%283%29.png)
 
 ![Farnell component list 3](../.gitbook/assets/image.png)
 
-![ordered PCB&apos;s via all pcb](../.gitbook/assets/image%20%281%29.png)
+![ordered PCB&apos;s via all pcb](../.gitbook/assets/image%20%282%29.png)
 
 **Total: 160€**
 

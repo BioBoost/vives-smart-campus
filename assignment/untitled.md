@@ -61,7 +61,7 @@ Currently we can divide the file into 4 pieces `frontend, backend, listener` and
 First, tell Docker what image you want to build the `app` service from by specifying that you’ll be building from the `projectwerk2/frontend:develop` image.
 
 ```text
-
+image: projectwerk2/frontend:develop
 ```
 
 Here, you’ve mapped port 80 on the host operating system, to port 5000 from the container. That way, when you’ve moved this container to a production host, users of the application can go to the host machine’s port 80 and have those requests answered from the container on port 5000.

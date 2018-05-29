@@ -22,9 +22,7 @@ A device had a few keys, these keys are unique for each devide. I think it's obv
 
 We used OTAA \(over-the-air-activation\).  We use OTAA because it is the preferred and most secure way to connect with The Things Network. Devices perform a join-procedure with the network, during which a dynamic `DevAddr` is assigned and security keys are negotiated with the device.
 
-## SYBREN PLS PLACE A HIGH RES VERSION OF THIS PICURE HERE :\)
-
-![](../.gitbook/assets/naamloos.png)
+![application data](../.gitbook/assets/screen-shot-2018-05-22-at-12.40.16.png)
 
 ## Payload Formats
 

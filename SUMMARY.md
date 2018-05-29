@@ -12,6 +12,7 @@
 * [The Things Network](assignment/the-things-network.md)
 * [Software Requirements](assignment/software-requirements.md)
 * [Software Design](assignment/software-design.md)
+* [Frontend](assignment/frontend.md)
 * [Project Requirements](assignment/project-requirements.md)
 * Reflection
 

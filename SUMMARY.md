@@ -15,5 +15,5 @@
 * [Frontend](assignment/frontend.md)
 * [Project Requirements](assignment/project-requirements.md)
 * Reflection
-* Measurements on the battery
+* [Measurements on the battery](assignment/measurements-on-the-battery.md)
 

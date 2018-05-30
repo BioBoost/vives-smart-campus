@@ -12,9 +12,40 @@ The Eloquent ORM included with Laravel provides a beautiful, simple ActiveRecord
 
 Instead of defining all of your request handling logic as Closures in route files, you may wish to organize this behavior using Controller classes. Controllers can group related request handling logic into a single class. Controllers are stored in the `app/Http/Controllers` directory.
 
+### Controller example
+
+This controller function returns all measurements sorted on temperature, humidity and movement on the requested roomnumber. `getLocationData()` is a private function made in this class  which returns one specific value \(temperature, humidity or movement in this case\) on the requested location.
+
+```php
+
+ public function locationData($roomnumber){
+ $sensor_types = ['temperature', 'humidity', 'movement'];
+ foreach($sensor_types as $sensor_type){
+ $measurements[$sensor_type] = $this->getLocationData($sensor_type, $roomnumber);
+ }
+ return $measurements;
+ }
+```
+
 ## Migrations
 
 Migrations are like version control for your database, allowing your team to easily modify and share the application's database schema. Migrations are typically paired with Laravel's schema builder to easily build your application's database schema. If you have ever had to tell a teammate to manually add a column to their local database schema, you've faced the problem that database migrations solve.
+
+### Migration example \(measurements\)
+
+```php
+
+ public function up()
+ {
+ Schema::create('measurements', function (Blueprint $table) {
+ $table->increments('id');
+ $table->double('value', 15, 8);
+ $table->unsignedInteger('sensor_id');
+ $table->foreign('sensor_id')->references('id')->on('sensors');
+ $table->timestamps();
+ });
+ }
+```
 
 ## Seeds
 

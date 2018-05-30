@@ -19,17 +19,137 @@ Our pcb, \(designed by Gain Gary and Bonne Robbe\) is made in the recommended so
 The schematic:  
 
 
-![schematic for si7013Atum20](../.gitbook/assets/image%20%289%29.png)
+![schematic for si7013Atum20](../.gitbook/assets/image%20%2810%29.png)
 
 the board:
 
-![board for si7013Atum20](../.gitbook/assets/image%20%285%29.png)
+![board for si7013Atum20](../.gitbook/assets/image%20%286%29.png)
 
 
 
+### Testing temperature and humidity sensor
+
+![SI7013 test setup](../.gitbook/assets/33139997_1326895597441060_6983756590121746432_n.jpg)
+
+\(The testing of the SI7013 sensor was done by Gary\)
+
+For the measurement of the temperature and humidity the SI7013 sensor was used,   
+this becaus of its low power consumption, usage of I²C communication, long term stability and the availability of loads of documentation. In fact, the manufacturer recommends the use of this sensor type for indoor weather stations. The datasheet can be found [here](https://project.labict.be/attachments/download/2047/Si7013-A20.pdf).
+
+![SI7013 functional block diagram](../.gitbook/assets/image%20%2811%29.png)
+
+#### Connection
+
+On the image below the connection of the sensor is given, this setup is used for typical applications. In the datasheet the usage of 10K pull-up resistors is recommended for the I²C communication. However using these values resulted in the impossibility of having I²C communication because the clock wasn't a nice square wave. To solve this problem usage of 3.3K resistors is recommended.
+
+![SI7013 connection for typical applications](../.gitbook/assets/image%20%281%29.png)
+
+#### Library
+
+we use the SILABS\_RHT library, which is compatible with different sensor types from the same manufacturer. It controls the complete I²C communication, the conversion of the measured values ​​to mili-percent / mili-°C and contains a wide range of methods that can be used to test the sensor. The complete documentation for the library can be found [here](https://siliconlabs.github.io/Gecko_SDK_Doc/efm32g/html/group__Si7013.html).
+
+While testing the sensor we have determined that the address of our physical sensor and the one defined in the library weren't the same, so it was changed in the library.
+
+```cpp
+/** I2C device address for Si7013 */
+#define SI7013_ADDR      0x80     //original address in datasheet: 0x80
+```
+
+#### Code used
+
+complete main.cpp to test the sensor.
+
+```cpp
+#include "mbed.h"
+#include "SILABS_RHT.h"
+ 
+I2C sensorI2C(D14, D15); //D14=SDA, D15=SCL (PC_1=SDA, PC_0=SCL on PCB)
+silabs::SILABS_RHT rhtSensor(&sensorI2C);
+Serial device(USBTX, USBRX);
+ 
+volatile bool busChecked = false;
+ 
+void respondedCallback( void ) {
+    busChecked = true;
+}
+
+int main() {
+    printf("Starting rhtSensor measurement\r\n");
+    int retval = rhtSensor.check_availability(si7013, respondedCallback);
+    printf("Available? %s\r\n", (!retval ? "SUCCESS" : "FAIL"));
+    
+
+while (true) {
+    retval = rhtSensor.measure(si7013, respondedCallback);
+    printf("Measure? %s\r\n", (!retval ? "SUCCESS" : "FAIL"));
+    
+ 
+    if(rhtSensor.get_active()) {
+        printf("Temperature: %d.%03d degC\r\n", rhtSensor.get_temperature()/1000, rhtSensor.get_temperature()%1000);
+        printf("Humidity: %d.%03d %\r\n", rhtSensor.get_humidity()/1000, rhtSensor.get_humidity()%1000);
+    } else {
+        printf("No sensor found\r\n");
+    }
+    wait_ms(5000);
+    } 
+}
+```
 
 
 
+#### Code operation
+
+Check if the sensor is active and responding.
+
+```cpp
+int main() {
+    printf("Starting rhtSensor measurement\r\n");
+    int retval = rhtSensor.check_availability(si7013, respondedCallback);
+    printf("Available? %s\r\n", (!retval ? "SUCCESS" : "FAIL"));
+```
+
+
+
+Perform measurement
+
+```cpp
+while (true) {
+    retval = rhtSensor.measure(si7013, respondedCallback);
+    printf("Measure? %s\r\n", (!retval ? "SUCCESS" : "FAIL"));
+```
+
+
+
+As already mensioned previously the sensor measured values are converted in the library to mili-percent / mili-°C
+
+```cpp
+//Code from library for humidity
+/* Convert value to milli-percent */
+			_rhData = (((_rhData) * 15625L) >> 13) - 6000;
+```
+
+```cpp
+//Code from library for temperature
+/* Convert to milli-degC */
+			_tData = (((_tData) * 21965L) >> 13) - 46850;
+```
+
+
+
+get\_active gets the current state of the sensor, active or inactive. However the check\_availability method must be called upon first.   
+After this we call upon the get\_humidity/ get\_temperature methods to get the last measured relative humidity/ temperature data.   
+Because of the measured value conversion in the library the stored values need to be converted again to % / °C.
+
+```cpp
+if(rhtSensor.get_active()) {
+      printf("Temperature: %d.%03d degC\r\n", 
+      rhtSensor.get_temperature()/1000, rhtSensor.get_temperature()%1000);
+      printf("Humidity: %d.%03d %\r\n", 
+      rhtSensor.get_humidity()/1000, rhtSensor.get_humidity()%1000);
+   } else {
+      printf("No sensor found\r\n");
+   }
+```
 
 ## Custom PCB
 
@@ -37,9 +157,9 @@ In the next stage, a custom PCB must be build using only the essential component
 
 The PCB can be designed using the design software of your preference. We recommend [CircuitMaker](https://circuitmaker.com/), but [Eagle](https://www.autodesk.com/products/eagle/overview) is also a good option.
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image%20%289%29.png)
 
 ### The schematic
 
@@ -107,14 +227,14 @@ The board with all layers:
 
 * Crystal for usage without internal clock​ 32KHz \(X1\)
 * Test pins above to deactivate the voltage regulator for testing​
-* cut-outs around the temp/hum sensor to avoid extra heat from components nearby
+* cut-outs around the temp/hum sensor to avoid wrong measurements due to extra heat from components nearby
 * Placed the voltage regulator far away from the temp/hum sensor to avoid extra heating.
 * Resistors/capacitors all 0805​
 * Power TEMP/HUMI and Power PIR1 are able to swith by a resistor pad so If they are not needed or don’t work its possible to switch them off​
 * Antenna trace width is 1mm thick. Smaller traces would result in a bad impedance matching             \(50 ohms\). What would make the antenna inefficient, or even unable to work at all.​
 * We also have an extra crystal on it to stabilize usb connection \(Y1,8MHz\).
 
-![board lay-out](../.gitbook/assets/image%20%2812%29.png)
+![board lay-out](../.gitbook/assets/image%20%2814%29.png)
 
 
 
@@ -126,7 +246,7 @@ Board lay-out as seen from the bottom layer:
 
 
 
-![board lay-out as seen from the bottom](../.gitbook/assets/image%20%284%29.png)
+![board lay-out as seen from the bottom](../.gitbook/assets/image%20%285%29.png)
 
 ## mBed device drivers
 
@@ -146,13 +266,13 @@ More info about mBed OS can be found at [https://os.mbed.com/](https://os.mbed.c
 
 made by Robbe
 
-![Farnell component list 1](../.gitbook/assets/image%20%287%29.png)
+![Farnell component list 1](../.gitbook/assets/image%20%288%29.png)
 
-![Farnell component list 2](../.gitbook/assets/image%20%283%29.png)
+![Farnell component list 2](../.gitbook/assets/image%20%284%29.png)
 
 ![Farnell component list 3](../.gitbook/assets/image.png)
 
-![ordered PCB&apos;s via all pcb](../.gitbook/assets/image%20%282%29.png)
+![ordered PCB&apos;s via all pcb](../.gitbook/assets/image%20%283%29.png)
 
 **Total: 160€**
 

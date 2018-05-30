@@ -112,7 +112,7 @@ int PIRSensor::get_delta(){
 
 ## TemperatureHumidity + si7013
 
-The TemperatureHumidity class includes the code to get a value from the actual temperature/ humidity sensor. Because the temperature and humidity sensor are in the same we have chosen to make in class TemperatureHumidity. the class si7013 is a library that we can use to get values from the sensors.
+The TemperatureHumidity class includes the code to get a value from the actual temperature/ humidity sensor. Because the temperature and humidity sensor are in the same package we have chosen to make one class, namely TemperatureHumidity. the class si7013 is a library that we can use to get values from the sensors.
 
 ### TemperatureHumidity \(constructor\)
 

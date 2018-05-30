@@ -32,7 +32,7 @@ GraphQL queries access not just the properties of one resource but also smoothly
 * **Different:** In GraphQL, there’s no difference between the fields on the `Query` type and the fields on any other type, except that only the query type is accessible at the root of a query. For example, you can have arguments in any field in a query. In REST, there’s no first-class concept of a nested URL.
 * **Different:** In REST, you specify a write by changing the HTTP verb from `GET` to something else like `POST`. In GraphQL, you change a keyword in the query.
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%282%29.png)
 
 ### GraphQL API in our project
 

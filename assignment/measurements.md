@@ -103,9 +103,3 @@ With the requirements from above I calculated a battery life of 3.99 years theor
 
 The values of the PIR, LoRaWAN and the processor were not exactly the same as in de datasheets.
 
-
-
-
-
-
-

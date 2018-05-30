@@ -25,7 +25,7 @@ It was a good learning proces for us three and we learned a lot of new things ab
 
 ## The firmware:
 
-\(Daan, Elias, Lennert, Joni,...\)
+\(Daan, Elias, Lennert, Joni ...\)
 
 Items we should have done \(earlier\):
 

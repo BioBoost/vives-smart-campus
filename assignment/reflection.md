@@ -48,15 +48,26 @@ Things we learned making the firmware:
 
 \(Steve\)
 
-MVC, ORM, JWT, CSRF, XSS is no longer chinese for me,  but there is still a lot to learn about it.
+MVC, ORM, JWT, CSRF, XSS is no longer chinese for me,  but there is still alot to learn about it.
 
 ## Database
 
 \(Steve\)
 
-I used a SQL database, but next time i would choose a NoSQL database to learn more about it.
+I used a SQL database, but next time i would chose a NoSQL database to learn more about it.
 
 
+
+## GraphQL API
+
+\(Aython\)
+
+I made a GraphQL API for the laravel backend.
+
+Things I learned:
+
+* I learned a lot of GraphQL and laravel.
+* I also learned something about mutations in graphQL
 
 
 

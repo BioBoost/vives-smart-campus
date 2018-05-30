@@ -12,7 +12,7 @@ The Eloquent ORM included with Laravel provides a beautiful, simple ActiveRecord
 
 Instead of defining all of your request handling logic as Closures in route files, you may wish to organize this behavior using Controller classes. Controllers can group related request handling logic into a single class. Controllers are stored in the `app/Http/Controllers` directory.
 
-### Controller example
+### Controller examples
 
 This controller function returns all measurements sorted on temperature, humidity and movement on the requested roomnumber. `getLocationData()` is a private function made in this class  which returns one specific value \(temperature, humidity or movement in this case\) on the requested location.
 
@@ -24,6 +24,36 @@ This controller function returns all measurements sorted on temperature, humidit
  $measurements[$sensor_type] = $this->getLocationData($sensor_type, $roomnumber);
  }
  return $measurements;
+ }
+```
+
+#### The `getLocationData()`  function
+
+```php
+
+ private function getLocationData($sensor_type, $roomnumber) {
+ $location = locations::where('roomnumber', $roomnumber)->firstOrFail();
+ $device = devices::where('location_id', $location->id)->firstOrFail();
+ $sensorId = sensors::where('name' , $sensor_type)->value('id');
+ $measurement = measurements::where('sensor_id', $sensorId)
+ ->orderBy('created_at', 'desc')
+ ->get();
+ return $measurement;
+ }
+```
+
+With this function its easy to make other functions that have the same functionality as seen below.
+
+```php
+
+ public function locationTemperature($roomnumber){
+ return $this->getLocationData('temperature', $roomnumber);
+ }
+ public function locationHumidity($roomnumber){
+ return $this->getLocationData('humidity', $roomnumber);
+ }
+ public function locationMovement($roomnumber){
+ return $this->getLocationData('movement', $roomnumber);
  }
 ```
 
@@ -56,6 +86,8 @@ Laravel includes a simple method of seeding your database with test data using s
 All Laravel routes are defined in your route files, which are located in the `routes` directory. These files are automatically loaded by the framework. The `routes/web.php` file defines routes that are for your web interface. These routes are assigned the `web` middleware group, which provides features like session state and CSRF protection. The routes in `routes/api.php` are stateless and are assigned the `api` middleware group.
 
 ### API Routes used for the project
+
+You can see the routers are linked to the Controllers and a specific function that is made in the controller. 
 
 ```php
 

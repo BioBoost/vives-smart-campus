@@ -4,7 +4,7 @@ description: Reflection of projectwork2
 
 # Reflection
 
-## **The PCB:**
+## **The PCB**
 
 \(Gary, Lennert and Robbe\)  
 To start the collaboration while designing the PCB went well. This is partly because circuit maker is very handy while working with multiple people. We worked on a fast tempo during the holidays. We got a lot of very usefull tips from the teachers and the communication with  them went well. Also as students and new to circuit maker, we haven't lost a lot of time considering we had to start over multiple times because of last term changes. 
@@ -23,7 +23,7 @@ Things we learned making the PCB:
 
 It was a good learning proces for us three and we learned a lot of new things about components, drawing schematics and placing those components on the right place.
 
-## The firmware:
+## The firmware
 
 \(Daan, Elias, Lennert, Joni ...\)
 
@@ -44,6 +44,12 @@ Things we learned making the firmware:
 * I \(Daan\) learned a lot about C++ and OOP concepts.
 * I \(Daan\) learned a lot about how to trouble shout and find problems.
 * And I \(Elias\) have the same opinion / experience as Daan. I learned a lot about C++ and have become comfortable with the C++ langauge.
+
+## Measurements
+
+It was difficult at first to figure out how I should calculate and take account of everything.
+
+But after some effort it was no problem anymore.
 
 ## LoRaWAN
 

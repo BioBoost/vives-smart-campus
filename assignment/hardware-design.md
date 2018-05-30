@@ -266,7 +266,7 @@ More info about mBed OS can be found at [https://os.mbed.com/](https://os.mbed.c
 
 ## Total cost
 
-made by Robbe
+made by Robbe and Joni
 
 ![Farnell component list 1](../.gitbook/assets/image%20%288%29.png)
 
@@ -275,6 +275,8 @@ made by Robbe
 ![Farnell component list 3](../.gitbook/assets/image.png)
 
 ![ordered PCB&apos;s via all pcb](../.gitbook/assets/image%20%283%29.png)
+
+![Ordered batteries](../.gitbook/assets/factuur_batterij.PNG)
 
 **Total: 160€**
 

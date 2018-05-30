@@ -24,6 +24,8 @@ Laravel includes a simple method of seeding your database with test data using s
 
 All Laravel routes are defined in your route files, which are located in the `routes` directory. These files are automatically loaded by the framework. The `routes/web.php` file defines routes that are for your web interface. These routes are assigned the `web` middleware group, which provides features like session state and CSRF protection. The routes in `routes/api.php` are stateless and are assigned the `api` middleware group.
 
+### API Routes used for the project
+
 ```php
 
 Route::post('register', 'UserController@register');

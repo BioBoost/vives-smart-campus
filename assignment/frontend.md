@@ -52,14 +52,52 @@ This route was abandoned because of time constraints in the hardware development
 
 ### Building
 
-The image-mapper component was straight-forward to create.
+The image-mapper component was straight-forward to create. It's basically an .svg image that has areas mapper over it. The areas are determined by the current width of the browser window to be adjustable. I wasn't able to make the whole image adjustable like that without the need for a page refresh \(which in turn made it impossible to display the graph\), so I did not make it so. After changing the size of the browser window the user has to manually refresh the page for the component to change size.
 
 ```javascript
-<ImageMapper src={require("../img/floor_plan.svg")}
+<ImageMapper
+    src={require("../img/floor_plan.svg")} // the visual of the plan
     id="map"
-    width={this.state.width*0.7}
-    map={this.state.MAP}
+    width={this.state.width * 0.7} // width adjustable based on browser window width
+    map={this.state.MAP} // the areas mapped on the plan
     fillColor={"rgba(141, 128, 229, 0.3)"}
-    onClick={(this.state.MAP.areas, this.click_handle)}/>
+    onClick{(this.state.MAP.areas, this.click_handle)} // action on clicking an area
+/>
+```
+
+The function for setting the areas that are mapped on the floor plan needed to be calculated precisely. By knowing the exact measurements of the rooms in the floor plan it was easy to set them correctly using the width parameter that updates every time the browser window is resized.
+
+The data displayed over the individual rooms are just text elements of HTML. As with the areas on the plan they needed to be positioned manually with calculations depending on the width of the browser window. During the rendering of the site a function is called for each of the datatypes \(temperature, humidity and movement\).
+
+```text
+temp_style() {
+    var temp = [];
+    var arr = [];
+    var margin = 0.072;
+    
+    for (var i = 0; i < 5; i++) {
+        temp[i] = { position: 'absolute',
+                    top: this.state.width * 0.15,
+                    left: this.state.width * margin,
+                    'fontSize': this.state.width * 0.007,
+                    'fontWeight': 'bold'
+                    };
+        margin = margin + 0.079;
+        if (i === 4) {
+            temp[i] = { position: 'absolute',
+                        top: this.state.width * 0.15,
+                        left: this.state.width * margin,
+                        'fontSize': this.state.width * 0.007,
+                        'fontWeight': 'bold'
+                        };
+        }
+        if (this.state.temp_data[i] !== undefined) {
+            arr[i] = <span style={temp[i]}>
+                        TEMP: {this.state.temp_data[i].value + "°C"}
+                    </span>
+        }
+    }
+    return arr;
+}
 ```
 

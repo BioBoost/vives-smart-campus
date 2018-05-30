@@ -71,19 +71,19 @@ The data displayed over the individual rooms are just text elements of HTML. As 
 
 ```javascript
 temp_style() {
-    var temp = []; // declaring helper arrays and variables
-    var arr = [];
+    var temp = []; // will hold the styling for the element
+    var arr = []; // will hold the element
     var margin = 0.072;
     
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 5; i++) { // because we have 4 active rooms
         temp[i] = { position: 'absolute',
                     top: this.state.width * 0.15,
                     left: this.state.width * margin,
                     'fontSize': this.state.width * 0.007,
                     'fontWeight': 'bold'
                     };
-        margin = margin + 0.079;
-        if (i === 4) {
+        margin = margin + 0.079; // same margins in the first 4 rooms
+        if (i === 4) { // the last room is has a different position altogether
             temp[i] = { position: 'absolute',
                         top: this.state.width * 0.15,
                         left: this.state.width * margin,
@@ -97,7 +97,35 @@ temp_style() {
                     </span>
         }
     }
-    return arr;
+    return arr; // returning the span element to be displayed
 }
+```
+
+The graph is displayed when the user clicks on any of the active rooms. Graph is invisible when the page is rendered and is made visible when user click on the plan.
+
+```javascript
+componentDidMount() { // making the graph invisible on render
+    ...
+    document.getElementById("chrt").style.display = "none"; // making it invisible
+    ...
+}
+
+click_handle() { // called when user clicks on a room on the plan
+    document.getElementById("chrt").style.display = "initial"; // making it visible
+    this.setState({ area }); // info for the room number displayed in graph name
+    this.setState(this.state.data); // update the data
+}
+```
+
+### Devices
+
+The buttons are displayed and are reactive on clicking. When clicked a function is called and the form and currently registered devices/locations/sensors are visible.
+
+```javascript
+<button type="button"
+        className="btn btn-dark btn-lg btn-block toggle_btns"
+        onClick={this.toggle_loc.bind(this)}>
+        ADD NEW LOCATION
+</button>
 ```
 

@@ -34,7 +34,7 @@ the board:
 \(The testing of the SI7013 sensor was done by Gary\)
 
 For the measurement of the temperature and humidity the SI7013 sensor was used,   
-this becaus of its low power consumption, usage of I²C communication, long term stability and the availability of loads of documentation. In fact, the manufacturer recommends the use of this sensor type for indoor weather stations. The datasheet can be found [here](https://project.labict.be/attachments/download/2047/Si7013-A20.pdf).
+this becaus of its low power consumption, usage of I²C communication, long term stability and the availability of loads of documentation. In fact, the manufacturer recommends the use of this sensor type for indoor weather stations. The datasheet can be found [here](https://www.silabs.com/documents/public/data-sheets/Si7013-A20.pdf).
 
 ![pin assignments SI7013](../.gitbook/assets/image%20%2815%29.png)
 
@@ -54,7 +54,7 @@ While testing the sensor we have determined that the address of our physical sen
 
 ```cpp
 /** I2C device address for Si7013 */
-#define SI7013_ADDR      0x80     //original address in datasheet: 0x80
+#define SI7013_ADDR      0x80     //original address in datasheet: 0x82
 ```
 
 #### Code used

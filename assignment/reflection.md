@@ -47,6 +47,8 @@ Things we learned making the firmware:
 
 ## Measurements
 
+\(Joni\)
+
 It was difficult at first to figure out how I should calculate and take account of everything.
 
 But after some effort it was no problem anymore.

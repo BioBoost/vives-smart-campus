@@ -125,22 +125,46 @@ TemperatureHumidity::TemperatureHumidity(I2C* sensorI2C) :rhtSensor(sensorI2C){
 
 ### read\_values
 
+The code here is very similar to the one used to test the SI7013 alone   
+\(see Hardware Disign/Prototype/Testing temerature and humidity sensor/code operation\)
+
+#### check\_availability
+
+Check if the sensor is active and responding.
+
 ```cpp
- void TemperatureHumidity::read_values() { 
+void TemperatureHumidity::read_values() { 
    if(!rhtSensor.check_availability(si7013, nullptr)){ 
-       wait_ms(100); 
-       int ret = rhtSensor.measure(si7013, nullptr); 
-       wait_ms(100); 
-       if (!ret) { 
+       wait_ms(100);      
+       //rhtSensor.measure
+         //conversion
+   else { 
+     printf("Failed to check avail temperature/humidity\r\n"); 
+   } 
+ }
+```
+
+#### rhtSensor.measure
+
+Perform measurement
+
+```cpp
+int ret = rhtSensor.measure(si7013, nullptr); 
+       wait_ms(100);
+```
+
+#### conversion
+
+We call upon the get\_humidity/ get\_temperature methods to get the last measured relative humidity/ temperature data.   
+Because the measured value is converted to mili-percent / mili-°C in the library the stored values need to be converted again to % / °C.
+
+```cpp
+if (!ret) { 
          temperature = ((rhtSensor.get_temperature()/1000.0)); 
          humidity = ((rhtSensor.get_humidity()/1000)); 
        } else { 
          printf("Failed to read temperature/humidity\r\n"); 
        }
-   } else { 
-     printf("Failed to check avail temperature/humidity\r\n"); 
-   } 
- }
 ```
 
 ### get\_temperature

@@ -36,6 +36,8 @@ the board:
 For the measurement of the temperature and humidity the SI7013 sensor was used,   
 this becaus of its low power consumption, usage of I²C communication, long term stability and the availability of loads of documentation. In fact, the manufacturer recommends the use of this sensor type for indoor weather stations. The datasheet can be found [here](https://project.labict.be/attachments/download/2047/Si7013-A20.pdf).
 
+![pin assignments SI7013](../.gitbook/assets/image%20%2815%29.png)
+
 ![SI7013 functional block diagram](../.gitbook/assets/image%20%2811%29.png)
 
 #### Connection
@@ -57,7 +59,7 @@ While testing the sensor we have determined that the address of our physical sen
 
 #### Code used
 
-complete main.cpp to test the sensor.
+complete code of the main.cpp used to test the sensor.
 
 ```cpp
 #include "mbed.h"

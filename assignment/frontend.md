@@ -69,9 +69,9 @@ The function for setting the areas that are mapped on the floor plan needed to b
 
 The data displayed over the individual rooms are just text elements of HTML. As with the areas on the plan they needed to be positioned manually with calculations depending on the width of the browser window. During the rendering of the site a function is called for each of the datatypes \(temperature, humidity and movement\).
 
-```text
+```javascript
 temp_style() {
-    var temp = [];
+    var temp = []; // declaring helper arrays and variables
     var arr = [];
     var margin = 0.072;
     

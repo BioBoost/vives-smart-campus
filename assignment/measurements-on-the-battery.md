@@ -12,9 +12,9 @@ Our choise was to use a " ENERGIZER L92". A lithium battery with a capacity of 1
 
 ![Meetopstelling batterijcurve](../.gitbook/assets/meetopstelling.PNG)
 
-As you can see, there is a circuit with the battery and a resistor. The battery will provide the battery from power and so the battery will run flat.
+As you can see, there is a circuit with the battery and a resistor. The battery will provide the resistor from power and so the battery will run flat.
 
-The microprocessor is fed by an external power supply, so its not necessary that there is connection with the pc while measuring. Its possible but not so praktical if you need your pc for other stuff.
+The microprocessor is fed by an external power supply, so its not necessary that there is connection with the pc while measuring. Its possible but not so praktical if you need your pc for other stuff. So we need to change the jumper 
 
 ### The program
 

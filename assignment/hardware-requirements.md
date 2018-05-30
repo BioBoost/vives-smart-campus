@@ -31,7 +31,7 @@ A battery’s capacity is expressed in Ampere-hours \(Ah\). This dictates the pe
 
 The tecxus Lithium batteries have a longer service life than ever before, up to 7 times longer than comparable alkaline batteries. This is made possible by state of the art technology. They boast excellent performance, quality and durability; especially in devices with high power consumption. This allows to significantly improved stand by times and service performance of energy-intensive devices, such as digital cameras, MP3 players, portable CD players, camcorders, and electronic games, even for extreme temperatures \(-20° - +60°\). The tecxus Lithium batteries are storable for up to 10 years and weight 30% less than standard alkaline batteries.
 
-![lithium compared with alkaline](../.gitbook/assets/image%20%289%29.png)
+![lithium compared with alkaline](../.gitbook/assets/image%20%2810%29.png)
 
 **More about that can be found in the datasheet:**
 

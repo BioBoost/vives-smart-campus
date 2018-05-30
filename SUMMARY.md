@@ -17,6 +17,6 @@
 * [Frontend](assignment/frontend.md)
 * [Docker](assignment/untitled.md)
 * [Project Requirements](assignment/project-requirements.md)
-* Reflection
+* [Reflection](assignment/reflection.md)
 * [Measurements on the battery](assignment/measurements-on-the-battery.md)
 

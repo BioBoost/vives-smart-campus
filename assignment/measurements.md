@@ -83,6 +83,22 @@ Requirements:
 * Measure for 2.5 seconds
 * Transmit via LoRaWAN for 500 µs
 
+A sample how we calculate the battery life.
+
+First of all calculate the currencies that you need.
+
+![Calculation - I](../.gitbook/assets/deeli.PNG)
+
+After that implement the time.
+
+![Calculation - II](../.gitbook/assets/deelii.PNG)
+
+At least calculate the lifetime.
+
+![Calculation -- III](../.gitbook/assets/deeliii.PNG)
+
+
+
 
 
 

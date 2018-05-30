@@ -68,7 +68,9 @@ void main(void) {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+{% hint style="info" %}
 Make sure to implement the mbed.h file.
+{% endhint %}
 
 ### LoRaWAN
 

@@ -56,8 +56,6 @@ MVC, ORM, JWT, CSRF, XSS is no longer chinese for me,  but there is still alot t
 
 I used a SQL database, but next time i would chose a NoSQL database to learn more about it.
 
-
-
 ## GraphQL API
 
 \(Aython\)
@@ -69,5 +67,19 @@ Things I learned:
 * I learned a lot of GraphQL and laravel.
 * I also learned something about mutations in graphQL
 
+## Frontend
 
+\(Gabriel\)
+
+Things that didn't go well:
+
+* Designing the application with mobile layout in mind.
+* Making the application resizable. 
+
+  
+Things I learned:
+
+* Working with more of React.js components.
+* Mapping over images.
+* Importance of setting doable goals for the foreseeable future for project.
 

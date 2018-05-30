@@ -20,6 +20,8 @@ The microprocessor is fed by an external power supply, so its not necessary that
 
 The IC will measure the voltage every 10 minutes \(600 seconds\). It will store that value in an array. The values will also be plotted on the serial port so you're able to follow it real time also. When the measurement is done you can connect your laptop, push the button on the IC and the whole array will be plotted on the serial port. So you need tera term or something else to see those values. Once you have those value's you can  easily copy-paste them into excel and make charts of it.
 
+!! **Make sure you make the array big enough to store all the measurements !!**
+
 ```text
 #include "mbed.h"              
  
@@ -73,4 +75,18 @@ float karakteristiekwaarden[maxwaarden];
     }
 } 
 ```
+
+### The charts
+
+#### Alkalinebattery with load 50mA
+
+![Spanningverloop Alkaline batterij bij belasting van 50 mA](../.gitbook/assets/batterijcurvegrafiekalkaline50.PNG)
+
+#### Lithiumbattery with load 50mA
+
+![Spanningverloop Lithiumbatterij bij belasting van 50 mA](../.gitbook/assets/batterijcurvegrafieklithium50.PNG)
+
+#### Lithiumbattery with load 20mA
+
+![](../.gitbook/assets/batterijcurvegrafieklithium0.PNG)
 

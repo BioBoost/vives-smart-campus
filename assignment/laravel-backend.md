@@ -6,15 +6,58 @@ description: The Laravel Backend
 
 ## Models
 
-info
+The Eloquent ORM included with Laravel provides a beautiful, simple ActiveRecord implementation for working with your database. Each database table has a corresponding "Model" which is used to interact with that table. Models allow you to query for data in your tables, as well as insert new records into the table.
+
+## Controllers
+
+Instead of defining all of your request handling logic as Closures in route files, you may wish to organize this behavior using Controller classes. Controllers can group related request handling logic into a single class. Controllers are stored in the `app/Http/Controllers` directory.
 
 ## Migrations
 
-info
+Migrations are like version control for your database, allowing your team to easily modify and share the application's database schema. Migrations are typically paired with Laravel's schema builder to easily build your application's database schema. If you have ever had to tell a teammate to manually add a column to their local database schema, you've faced the problem that database migrations solve.
 
 ## Seeds
 
-info
+Laravel includes a simple method of seeding your database with test data using seed classes. All seed classes are stored in the `database/seeds` directory. Seed classes may have any name you wish, but probably should follow some sensible convention, such as `UsersTableSeeder`, etc. By default, a `DatabaseSeeder` class is defined for you. From this class, you may use the `call` method to run other seed classes, allowing you to control the seeding order.
+
+## Routes
+
+All Laravel routes are defined in your route files, which are located in the `routes` directory. These files are automatically loaded by the framework. The `routes/web.php` file defines routes that are for your web interface. These routes are assigned the `web` middleware group, which provides features like session state and CSRF protection. The routes in `routes/api.php` are stateless and are assigned the `api` middleware group.
+
+```php
+
+Route::post('register', 'UserController@register');
+
+// This routes are for test purpose at the frontend
+Route::post('locations', 'LocationsController@store');
+Route::post('sensors', 'SensorsController@store');
+Route::post('devices', 'DevicesController@store');
+
+//Login for posting
+Route::post('login', 'UserController@login');
+Route::group(['middleware' => 'auth:api'], function(){
+ Route::get('details', 'UserController@details');
+ Route::post('measurements', 'MeasurementsController@store');
+});
+//Public measurments routes
+Route::get('measurements', 'MeasurementsController@index');
+Route::get('measurements/{id}', 'MeasurementsController@show');
+//Public locations routes
+Route::get('locations', 'LocationsController@index');
+Route::get('locations/{id}', 'LocationsController@show');
+Route::get('locations/room/{roomnumber}', 'LocationsController@locationData');
+Route::get('locations/room/{roomnumber}/temperature', 'LocationsController@locationTemperature');
+Route::get('locations/room/{roomnumber}/humidity', 'LocationsController@locationHumidity');
+Route::get('locations/room/{roomnumber}/movement', 'LocationsController@locationMovement');
+//Public devices routes
+Route::get('devices', 'DevicesController@index');
+Route::get('devices/{id}', 'DevicesController@show');
+//Public sensors routes
+Route::get('sensors', 'SensorsController@index');
+Route::get('sensors/{id}', 'SensorsController@show');
+//Routes for the TTN listener
+Route::post('listener', 'TTNDataController@store');
+```
 
 ## GraphQL API
 

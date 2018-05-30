@@ -97,6 +97,7 @@ temp_style() {
                     </span>
         }
     }
+    
     return arr; // returning the span element to be displayed
 }
 ```
@@ -122,10 +123,103 @@ click_handle() { // called when user clicks on a room on the plan
 The buttons are displayed and are reactive on clicking. When clicked a function is called and the form and currently registered devices/locations/sensors are visible.
 
 ```javascript
-<button type="button"
-        className="btn btn-dark btn-lg btn-block toggle_btns"
-        onClick={this.toggle_loc.bind(this)}>
-        ADD NEW LOCATION
+<button type="button" 
+        className="btn btn-dark btn-lg btn-block toggle_btns" // style information
+        onClick={this.toggle_loc.bind(this)}> // function bound to button click
+        ADD NEW LOCATION // the text on the button
 </button>
+{!this.state.loc_btn_hidden && <LocForm />} // form invisible until button click
 ```
+
+Upon rendering the site the form and list of currently registered stuff is hidden. Clicking one of the button makes the respective data visible.
+
+```javascript
+toggle_loc() { // called on button click, makes form visible
+    this.setState({ loc_btn_hidden: !this.state.loc_btn_hidden });
+}
+```
+
+The registered data is displayed in lists and it is generated when the site is rendered. The data for each of the categories \(devices, sensors and locations\) is saved in the state of the component. It is then displayed when the corresponding function is called. The same can be said about the form. For the devices and sensors forms the last of the inputs is a single select that has the values of the respective higher level data loaded and available.
+
+```javascript
+locations() { // generates data for the single select element
+    var arr = []; // stores the options for the element
+    
+    for (var i = 0; i < this.state.locs.length; i++) {
+        arr[i] = <option key={i} // one of the options in single select
+                        value={this.state.locs[i].id}>
+                        {this.state.locs[i].name}
+                </option>
+    }
+    
+    return arr; // returning the data for the single select elements
+}
+```
+
+```javascript
+active_locs() { // generates the list of registered locations
+    var arr = [];
+    
+    for (var i = 0; i < this.state.locs.length; i++) {
+        arr[i] = (<li className="list-group-item" // styling
+                        data-toggle="tooltip" // displaying tooltip on hover
+                        data-placement="bottom"
+                        title={this.state.locs[i].description} // content of tooltip
+                        key={i}>
+                        <div>NAME: {this.state.locs[i].name}</div>
+                        <div>ROOM: {this.state.locs[i].roomnumber}</div>
+                    </li>);
+    }
+    
+    return arr; // returning the list of registered locations
+}
+```
+
+On clicking the submit button under the form for registering a new device a function with a post request is triggered. The post request was done with the help of the axios third-party component that uses promises.
+
+```javascript
+submit_location() {
+    var loc_name = document.getElementById("loc_name").value; // getting values from components
+    var loc_num = document.getElementById("loc_num").value;
+    var loc_desc = document.getElementById("loc_desc").value;
+    
+    axios.post(BACKEND_URL + "/api/locations", { // setting the url to post to
+        "name": loc_name,
+        "roomnumber": loc_num,
+        "description": loc_desc
+    })
+        .then(function (response) { // logs the response code of the request
+            console.log(response);
+        })
+        .cath(function (error) { // logs the error code
+            console.log(error);
+        });
+}
+```
+
+### Data
+
+I used the axios third-party component for the get requests. They are done using promises. Due to the structure of the data I had to get data for each room separately. All of temperatures, humidity and movement data for one room was available through one get request. The sensors, devices and locations needed separate functions as well.
+
+```javascript
+function getData265() { // getting data for room 2.65
+    return new Promise((resolve, reject) => { // starting a new promise
+        axios.get(BACKEND_URL + "/api/locations/room/2.65") // url with data
+            .then(results => {
+                const sensor_data = results.data;
+                resolve(sensor_data); // returning the data
+            })
+            .catch(error => {
+                console.log(error); // logging the error
+                reject(); // interrupting the get request
+            })
+    });
+}
+```
+
+## Conclusion
+
+Due to time constraints I was not able to finish all functions that were set in the assignment. The application is not fully responsive to window resizing and it was not designed for mobile devices. These issues could be easily resolved with more work though. Other than these I would say the application is in a decent state.
+
+You can find all of my code here: [https://github.com/Projectwerk2-2018/smart-campus-frontend](https://github.com/Projectwerk2-2018/smart-campus-frontend)
 

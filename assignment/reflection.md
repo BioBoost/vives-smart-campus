@@ -44,13 +44,13 @@ Things we learned making the firmware:
 * I \(Daan\) learned a lot about C++ and OOP concepts.
 * I \(Daan\) learned a lot about how to trouble shout and find problems.
 
-  
-Docker
+##  Docker
 
 \(sybren\)
 
-It was very instructive and instructive to be able to immerse myself in Docker.   
-When setting up a docker I also came into contact with setting up a linux server. Where the lessons learned about linux came in handy.
+Docker was a great added value due to the speed and compactness of the working environment.  
+As well as the knowledge to set up a server and link it to a web address was an instructive process.  
+I really liked that I could work on this and the familiar knowledge I gained from it.
 
 
 

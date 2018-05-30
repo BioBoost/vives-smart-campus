@@ -15,7 +15,7 @@ Items we should have done \(earlier\):
 * We had to make a pcb on a breadboard before making a full PCB.
 * Testing of the components had to be done a lot earlier
 
-Things we learned making the PCB
+Things we learned making the PCB:
 
 * The use of short traces on the groundplane is required to maintain/ ensure its bnefits
 * The usage of a VCO results in a lot of loss of energy to heat and this makes the print less energy efficient  \(with bad placement of components this can result in measuring wrong temperatures\)
@@ -24,6 +24,30 @@ Things we learned making the PCB
 It was a good learning proces for us three and we learned a lot of new things about components, drawing schematics and placing those components on the right place.
 
 ## The firmware:
+
+\(Daan, Elias, Lennert, Joni,...\)
+
+Items we should have done \(earlier\):
+
+* We started to late with the design of our firmware.
+* We had to test the firmware class by class and not everyting at once.
+
+Things that didn't go well:
+
+* There are still some small bugs in the code but all sensors work except the pir sensor.
+* Some classes aren't OOP oriented.
+* Some classes or methods contain pieces of code that shouldn't be in that class or method.
+
+  
+Things we learned making the firmware:
+
+* I \(Daan\) learned a lot about C++ and OOP concepts.
+* I \(Daan\) learned a lot about how to trouble shout and find problems.
+
+  
+
+
+
 
 
 

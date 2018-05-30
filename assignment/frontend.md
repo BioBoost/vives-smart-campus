@@ -34,21 +34,32 @@ The homepage only contains a background image stating the name of the applicatio
 
 #### Building
 
-The Building route contains the floor plan which was created by the react-image-mapper component.
+The Building route contains the floor plan which was created by the react-image-mapper component. Active rooms have the measured real-time values of the temperature, humidity and movement displayed over them. Clicking on a room opens the historical data of those measured values in a form of a graph.
 
-```text
-
-```
+![](../.gitbook/assets/building.png)
 
 #### Devices
 
 The Devices route contains three buttons that stretch through the upper-center part of the screen. Upon clicking on one of them the list of currently active devices/sensors/locations is displayed on the left and the form for adding a new one is on the right.
 
+![](../.gitbook/assets/devices.png)
+
 #### Calendar
 
-This route was not abandoned because of time constraints in the hardware development part of the project.
+This route was abandoned because of time constraints in the hardware development part of the project.
 
 ## Code
 
 ### Building
+
+The image-mapper component was straight-forward to create.
+
+```javascript
+<ImageMapper src={require("../img/floor_plan.svg")}
+    id="map"
+    width={this.state.width*0.7}
+    map={this.state.MAP}
+    fillColor={"rgba(141, 128, 229, 0.3)"}
+    onClick={(this.state.MAP.areas, this.click_handle)}/>
+```
 

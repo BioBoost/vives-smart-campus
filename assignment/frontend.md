@@ -221,5 +221,7 @@ function getData265() { // getting data for room 2.65
 
 Due to time constraints I was not able to finish all functions that were set in the assignment. The application is not fully responsive to window resizing and it was not designed for mobile devices. These issues could be easily resolved with more work though. Other than these I would say the application is in a decent state.
 
+During the presentation of the project I was told there was a requirement for a sort of management component. However, in the official assignment the only mention of anything like this was the schedule component that would be used in the calendar route. I abandoned this after due consideration because the hardware was abandoned and I was told by the teacher that it is now unnecessary to implement this.
+
 You can find all of my code here: [https://github.com/Projectwerk2-2018/smart-campus-frontend](https://github.com/Projectwerk2-2018/smart-campus-frontend)
 

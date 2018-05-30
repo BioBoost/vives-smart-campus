@@ -8,6 +8,7 @@
 * [Hardware Requirements](assignment/hardware-requirements.md)
 * [Hardware Design](assignment/hardware-design.md)
 * [Battery life](assignment/measurements.md)
+* [Measurements on the battery](assignment/measurements-on-the-battery.md)
 * [Firmware](assignment/firmware.md)
 * [The Things Network](assignment/the-things-network.md)
 * [Software Requirements](assignment/software-requirements.md)
@@ -18,5 +19,4 @@
 * [Docker](assignment/untitled.md)
 * [Project Requirements](assignment/project-requirements.md)
 * [Reflection](assignment/reflection.md)
-* [Measurements on the battery](assignment/measurements-on-the-battery.md)
 

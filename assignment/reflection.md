@@ -4,7 +4,7 @@ description: Reflection of projectwork2
 
 # Reflection
 
-**The PCB:**
+## **The PCB:**
 
 \(Gary, Lennert and Robbe\)  
 To start the collaboration while designing the PCB went well. This is partly because circuit maker is very handy while working with multiple people. We worked on a fast tempo during the holidays. We got a lot of very usefull tips from the teachers and the communication with  them went well. Also as students and new to circuit maker, we haven't lost a lot of time considering we had to start over multiple times because of last term changes. 
@@ -22,4 +22,8 @@ Things we learned making the PCB
 * It is necessary to place a fuse after the VCO to prevent accidents \(eg. fire\) if it breaks down.
 
 It was a good learning proces for us three and we learned a lot of new things about components, drawing schematics and placing those components on the right place.
+
+## The firmware:
+
+
 

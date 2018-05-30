@@ -76,7 +76,7 @@ Make sure to implement the mbed.h file.
 
 ![Image 5 - LoRaWAN](../.gitbook/assets/lorawan_current.jpg)
 
-We send every 10 seconds a package with random data. There can be an issue to send the packages, as you can see.
+We send a package with random data every 10 seconds. There can be an issue to send the packages, as you can see.
 
 ## Computation
 

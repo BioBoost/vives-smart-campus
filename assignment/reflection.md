@@ -43,6 +43,15 @@ Things we learned making the firmware:
 
 * I \(Daan\) learned a lot about C++ and OOP concepts.
 * I \(Daan\) learned a lot about how to trouble shout and find problems.
+* And I \(Elias\) have the same opinion / experience as Daan. I learned a lot about C++ and have become comfortable with the C++ langauge.
+
+## LoRaWAN
+
+\(Elias\)
+
+At first, I was scared to take the task of the LoRaWAN. But it quickly became very easy to use.
+
+In further projects I would definitely use LoRaWAN if its suited for the problem.
 
 ##  Laravel backend
 
@@ -82,10 +91,4 @@ Things I learned:
 * Working with more of React.js components.
 * Mapping over images.
 * Importance of setting doable goals for the foreseeable future for project.
-
-## Battery measurements
-
-First i used arduino, that was very simple because it has an seriel monitor build in. It is also much more user firendly. For this little program is would always use arduino, because for me its a more known environement. After i was forced to use mbed, it was very hard to get everything working despite the fact that i had an working program.
-
-But when i look back now, everything worked as i wanted so i'm a happy man.
 

@@ -34,7 +34,7 @@ Items we should have done \(earlier\):
 
 Things that didn't go well:
 
-* There are still some small bugs in the code but all sensors work except the pir sensor.
+* There are still some small bugs in the code but all parts work but there is a small bug in the communiction between some classes.
 * Some classes aren't OOP oriented.
 * Some classes or methods contain pieces of code that shouldn't be in that class or method.
 
